@@ -5,4 +5,5 @@
 (defn -main []
   ;; Generate resume. Going to index html until I'm doing more with
   ;; the website and figure out routing.
+  (println "Generating docs/index.html")
   (spit "docs/index.html" (resume/page)))

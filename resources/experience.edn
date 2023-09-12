@@ -17,7 +17,8 @@
   :summary       {:title          "Summary"
                   :bullet-points? false
                   ;; TODO: summary content
-                  :content        [:p "Full-stack developer with a strength for backend webapp and data pipeline projects."]}}
+                  :content        "Full-stack developer with a strength for backend webapp and data pipeline projects.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}
 
  :fulltime-experience
  {:title   "Professional experience"
@@ -26,8 +27,8 @@
              :industry  "AdTech"
              :location  "Remote (based in Baltimore, MD)"
              :position  "Senior Software Engineer"
-             :start     "April 25, 2022" :end "April 20, 2023"
-             :highlight ""  ; TODO: highlights
+             :start     [2022 "Apr" 25] :end [2023 "Apr" 20]
+             :highlight nil  ; TODO: highlights
              :bullets   ["Iteratively improved legacy data pipeline into new design."
                          "Implemented ingestion of several third-party data sources into standardized internal format."
                          "Mentored developers new to Clojure and functional programming."]
@@ -40,7 +41,7 @@
              :industry  "BioTech"
              :location  "St. Louis, MO"
              :position  "Application Developer"
-             :start     "February 15, 2021" :end "April 15, 2022"
+             :start     [2021 "Feb" 15] :end [2022 "Apr" 15]
              :highlight "Worked primarily with the Griffith Lab transitioning bioinformatics workflows to run on GCP" ; TODO: highlights
              :bullets   ["Designed and implemented cloud solutions for running precision-oncology workflows."
                          "Integrated cloud solution with local cluster provenance database."
@@ -51,9 +52,8 @@
              :industry  "Mortgage"
              :location  "Remote (based in Chicago, IL)"
              :position  "Software Engineer"
-             :start     "July 29, 2019"
-             :end       "Jan 29, 2021"
-             :highlight ""  ; TODO: highlight
+             :start     [2019 "July" 29] :end [2021 "Jan" 29]
+             :highlight nil  ; TODO: highlight
              :bullets   ["Created new borrower experience MyAccount, collaborating with designers, front-end engineer, and integrating with dependency teams."  ; TODO: shorten
                          "Collaborated remotely as the team grew from five partially-remote backend engineers to twelve fully-remote interdisciplinary members."  ; TODO: shorten
                          "Migrated a dozen services from disparate Serverless deploys to one central Terraform repo."
@@ -65,9 +65,9 @@
              :website   "https://climate.com/"
              :industry  "Digital Agriculture"
              :location  "Creve Coeur, MO"
-             :Position  "Software Engineer"
-             :start     "January, 2018" :end "July 24, 2019"
-             :highlight ""  ; TODO: highlight
+             :position  "Software Engineer"
+             :start      [2019 "Jan" nil] :end [2019 "Jul" 24]
+             :highlight nil  ; TODO: highlight
              :bullets   ["Designed and implemented an event-oriented microservice architecture to replace legacy batch-driven microservice system for generating map images."  ; TODO: shorten
                          "Maintained legacy systems for generating map images from satellite data."
                          "Designed and implemented a ReactJS front-end to visually troubleshoot ingested geospatial data."]
@@ -80,7 +80,7 @@
    :location  "St. Louis, MO"
    :position  "Substitute Teacher's Assistant"
    :start     "June 12, 2019" :end "March, 2020"
-   :highlight ""  ; TODO
+   :highlight nil  ; TODO
    :bullets   ["Guided students through hurdles with assignments cover Excel, SQL, Python, and JavaScript data visualization."
                "Rapidly familiarised with lessons and assignments when called in last-minute."]
    :keywords  [:python :javascript :sql :visual-basic]}
@@ -91,33 +91,33 @@
    :location  "Creve Coeur, MO"
    :position  "Software Engineer Intern"
    :start     "May 2017" :end "August 2017"
-   :highlight ""  ; TODO
+   :highlight nil  ; TODO
    :bullets   ["Created a ReactJS front-end to visualize the boundaries of geospatial datasets as a tool for the Support team to troubleshoot common boundary problems before escalating to engineering."  ; TODO: shorten
                "Assisted other interns in troubleshooting problems with their own projects in Python, bash, and JavaScript."]
    :keywords  [:reactjs :javascript :bash]}
 
-  {:company    "AirZaar (now Strayos)"
-   :website    "https://www.strayos.com/"
-   :industry   "Mining"
-   :location   "Remote (based in St. Louis, MO)"
-   :position   "Backend Software Consultant"
-   :start      "January, 2017" :end "May, 2017"
-   :highlight  ""  ; TODO
-   :bullets    ["Implemented features within a Ruby on Rails back-end and AngularJS front-end"
-                "Rapidly self-taught Ruby on Rails, bash tools, and JavaScript"]
-   :keywords   [:bash :ruby-on-rails :ruby :javascript :angularjs]}
+  {:company   "AirZaar (now Strayos)"
+   :website   "https://www.strayos.com/"
+   :industry  "Mining"
+   :location  "Remote (based in St. Louis, MO)"
+   :position  "Backend Software Consultant"
+   :start     "January, 2017" :end "May, 2017"
+   :highlight nil  ; TODO
+   :bullets   ["Implemented features within a Ruby on Rails back-end and AngularJS front-end"
+               "Rapidly self-taught Ruby on Rails, bash tools, and JavaScript"]
+   :keywords  [:bash :ruby-on-rails :ruby :javascript :angularjs]}
 
-  {:company    "Missouri S&T Mars Rover Design Team"
-   :website    "https://marsrover.mst.edu/"
-   :industry   "Aerospace"
-   :location   "Rolla, MO"
-   :position   "Science Software Developer"
-   :start      "August 2015" :end "May 2017"
+  {:company   "Missouri S&T Mars Rover Design Team"
+   :website   "https://marsrover.mst.edu/"
+   :industry  "Aerospace"
+   :location  "Rolla, MO"
+   :position  "Science Software Developer"
+   :start     "August 2015" :end "May 2017"
    :highlight "Handled software for the science team covering the sensor telemetry system. Won 1st place Undergraduate Paper in the International Telemetering Conference for co-authoring a paper on the system."
-   :bullets ["Implemented embedded software sensor readings and communication."
-             "Designed and implemented a PyQt desktop GUI for displaying scientific data."
-             "Co-authored a published white-paper covering the telemetry system."]
-   :keywords   [:python :javascript :c++]}]
+   :bullets   ["Implemented embedded software sensor readings and communication."
+               "Designed and implemented a PyQt desktop GUI for displaying scientific data."
+               "Co-authored a published white-paper covering the telemetry system."]
+   :keywords  [:python :javascript :c++]}]
 
  :education
  {:title   "Education"

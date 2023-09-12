@@ -28,7 +28,7 @@
 
 (defn contact-links [{:keys [basics]}]
   [:ul.contact-links
-   (for [profile (:profiles basics)]
+   (for [profile (:contact-links basics)]
      [:li
       [:a {:href (:url profile)}
        [:img {:src (:icon profile)}]
@@ -37,24 +37,27 @@
 (defn summary [{:keys [basics]}]
   [:div.summary
    [:h2 "Summary"]
-   [:p (:summary basics)]])
+   [:p (:content (:summary basics))]])
 
+;; dates in EDN are given in [yyyy "Month" dd] format
+(defn date [[year month day]]
+  (str month " " year))
 (defn interval [{:keys [start end]}]
   (if (nil? end)
-    (str "Started " start)
-    (str start " to " end)))
+    [:p  (date start)]
+    (list
+     [:p (date start) " to " (date end)])))
 
 (defn experience-li [entry]
   [:li.company
    [:div.summary
     [:a.name {:href (:website entry)} (:company entry)]
-    ;; TODO: what's the point of the thread-decor-h and hidden-labels? styling and autoscrapers?
     [:div.role (:position entry)]
     [:div.interval (interval entry)]
     [:div.keywords
-     [:p (string/join "," (map name (:keywords entry)))]]]
+     [:p (string/join ", " (map name (:keywords entry)))]]]
    [:div.details
-    [:p (:highlight entry)]
+    [:p (or (:highlight entry) "TODO")]
     [:ul (for [bullet (:bullets entry)]
            [:li bullet])]]])
 
@@ -71,8 +74,8 @@
    [:ul
     (for [entry (:content education)]
       [:li
-       [:p (str (:study-type entry) " in " (:area entry))]
-       [:p.institution
+       [:p
+        (str (:study-type entry) " in " (:area entry) " at ")
         [:a {:href (:website entry)} (:institution entry)]]])]])
 
 (defn today [] (.format (java.text.SimpleDateFormat. "MMMM d, YYYY") (java.util.Date.)))
