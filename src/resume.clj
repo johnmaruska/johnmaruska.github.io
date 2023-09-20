@@ -75,8 +75,8 @@
     (for [entry (:content fulltime-experience)]
       [:li.company
        [:a.name {:href (:website entry)} (:company entry)]
-       [:p.position (:position entry)]
-       [:p.interval (interval entry)]
+       [:div.position
+        [:p.position (:position entry)] [:p.interval (interval entry)]]
        [:p.keywords (string/join ", " (map name (:keywords entry)))]
        #_ [:div.details
            [:p (or (:highlight entry) "TODO")]

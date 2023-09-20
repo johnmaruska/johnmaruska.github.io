@@ -24,7 +24,7 @@
                   Louis."}}
 
  :fulltime-experience
- {:title   "Professional experience"
+ {:title   "Professional Experience"
   :content
   [{:company   "Incremental"
     :website   "https://incremental.com/"
