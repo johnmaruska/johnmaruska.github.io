@@ -86,8 +86,7 @@ hr.divider {
 p.keywords {
     font-size: .75rem;
     color: #657b83;
-    margin: 0;
-    margin-bottom: 12px;
+    margin: 0 15px 5px 15px;
 }
 
 /* main content */
@@ -116,13 +115,11 @@ div.position {
     width: 100%;
 }
 
-p.position, .interval {
-    line-height: 10px;
+p.interval, p.position {
+    margin: 5px;
 }
-
 p.position {
     font-size: 1.25rem;
-    margin: 0;
 }
 
 .details li::before {
@@ -140,5 +137,12 @@ p.position {
     }
     .main {
         margin: 0;
+    }
+
+    div.position {
+        display: block;
+    }
+    ul.experience {
+        padding-left: 0;
     }
 }
