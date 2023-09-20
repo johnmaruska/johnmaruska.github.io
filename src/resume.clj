@@ -5,8 +5,6 @@
    [clojure.edn :as edn]
    [clojure.java.io :as io]))
 
-;; TODO: how to generate a PDF?
-
 (defn head [{:keys [basics]}]
   [:head
    [:meta {:name "description" :content (str (:name basics) " - " (:label basics))}]
@@ -79,8 +77,7 @@
        [:a.name {:href (:website entry)} (:company entry)]
        [:p.position (:position entry)]
        [:p.interval (interval entry)]
-       [:p.keywords
-        [:p (string/join ", " (map name (:keywords entry)))]]
+       [:p.keywords (string/join ", " (map name (:keywords entry)))]
        #_ [:div.details
            [:p (or (:highlight entry) "TODO")]
            [:ul.details (for [bullet (:bullets entry)]

@@ -15,3 +15,6 @@ hoping to expand in the future.
 
 Design of the `resume` page commissioned from Kat Garnier aka
 [katsinkskyd](https://github.com/katsinskyd)
+
+Structure based off [agzam/resume](https://github.com/agzam/resume)
+and changed to suit my personal taste.
