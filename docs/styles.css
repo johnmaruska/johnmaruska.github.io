@@ -1,113 +1,119 @@
 body {
-  background-color: #fdf6e3;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5rem;
-  position: relative;
-
-  max-width: 70%;
-  width: 70%;
+  margin: 0;
+  background-color: #FDF6E3;
+  font-family: Muli, sans-serif;
 }
 
-ul {
-  margin-block-start: 0;
-  margin-block: 0;
-  padding-inline-start: 0;
-  list-style: none;
-}
-
-li, p {
-  margin-block-start: 5px;
-  margin-block-end: 5px;
+h1, h2 {
+  font-family: "Space Mono", monospace;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
-}
-a:hover {}
-
-h2 {
-  font-size: 1.8rem;
-  color: #268bd2;
+  transition: 0.3s;
 }
 
-.hidden-label {}
-
-.pdf-link {
-  position: absolute;
-  top: 1rem;
-  right: 0rem;
-}
-.pdf-link:hover {}
-.pdf-link img {}
-
-.header {
-  display: grid;
-  margin-top: 3rem;
-  grid-template-areas: 'title links';
-}
-.header .title {
-  grid-area: title
-}
-.header .title * {}
-.header .links {}
-.header .links li {}
-.header .links img {}
-
-.experience .company {
-  margin-top: 0.5rem;
-  display: grid;
-  grid-template-columns: minmax(25%, 2fr) minmax(30%, 4fr);
-  grid-template-areas: 'summary details';
-  grid-template-rows: max-content;
+a:hover {
+  color:#2aa198;
 }
 
-.experience .company .name {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  z-index: 1;
+.sidebar {
+  background-color: #002B36;
+  color: #FDF6E3;
+  margin: 0;
+  padding: 0px;
+  width: 30%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  text-align: center;
+}
+
+.main {
+  color: #002B36;
+  margin-left: 30%;
+  padding: 50px 50px;
+  height: 100%;
+}
+
+.sidebar-content {
+  padding: 50px;
+}
+
+.name {
+  font-size: 3rem;
+}
+
+.role, .location  {
+  line-height: 10px;
   font-weight: bold;
-  color: #268bd2;
+  font-size: 1.5rem;
 }
 
-.experience .company .summary {
-  grid-area: summary;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+i.fa {
+  font-size: 1.5rem;
+  padding: 10px;
+  transition: 0.3s;
 }
 
-.experience .company .summary .role {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+i.fa:hover {
+  transform: scale(1.5);
+  color:#2aa198;
+}
+
+hr.divider {
+  border-top: 1px solid;
+  margin-top:20px;
+}
+
+.sidebar-content h2, .summary, .education {
+  text-align: left;
+}
+
+.summary {
+  padding-left: 20px;
+}
+
+.update {
+  font-size: .75rem;
+}
+
+/* main content */
+
+.main ul {
+  list-style: none;
+}
+
+.experience a {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-.experience .company .summary .interval {
-  font-size: 1rem;
-  color: #2aa198;
+.company {
+  padding-bottom: 30px;
 }
 
-.experience .company .summary * {
-  margin-right: 5px;
+.position, .interval {
+  line-height: 10px;
 }
 
-.experience .company .details {
-  grid-area: details;
-  position: relative;
-  padding-top: 1.5rem;
+.position {
+  font-size: 1.25rem;
 }
 
-.experience .company .details ul {
-  list-style: disc;
-  padding-inline-start: 1rem;
+.details li::before {
+  content: "\00BB  ";
 }
 
-.experience .company .keywords p {
-  padding-top: 20px;
-  font-size: small;
-}
+/* responsive */
 
-.institution {}
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main {
+    margin: 0;
+  }
+}

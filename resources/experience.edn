@@ -7,13 +7,13 @@
   ;; TODO: get SVGs
   :contact-links [{:network "jackmaruska@gmail.com"
                    :url     "mailto:jackmaruska@gmail.com"
-                   :icon    "img/email-icon.svg"}
+                   :icon    "envelope"}
                   {:network "LinkedIn"
                    :url     "https://www.linkedin.com/in/johnwmaruska"
-                   :icon    "img/linkedin-icon.svg"}
+                   :icon    "linkedin"}
                   {:network "GitHub"
                    :url     "https://github.com/johnmaruska"
-                   :icon    "img/github-icon.svg"}]
+                   :icon    "github"}]
   :summary       {:title          "Summary"
                   :bullet-points? false
                   ;; TODO: summary content
