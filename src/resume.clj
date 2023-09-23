@@ -19,33 +19,35 @@
    [:title (str (:name basics) ". " (:label basics))]])
 
 (defn introduction [{:keys [basics]}]
-  (list
+  [:div.introduction
    [:h1.name (:name basics)]
    [:p.role (:label basics)]
-   [:p.location (:location basics)]))
+   [:p.location (:location basics)]])
 
 (def pdf-link
   [:a.pdf-link {:href "resume.pdf"} [:i {:class "fa fa-file-pdf-o"}]])
 
 (defn links [{:keys [basics]}]
-  (for [profile (:contact-links basics)]
-    [:a {:href (:url profile)}
-     [:i {:class (str "fa fa-" (:icon profile))}]]))
+  [:div.links
+   (for [profile (:contact-links basics)]
+     [:a {:href (:url profile)}
+      [:i {:class (str "fa fa-" (:icon profile))}]])
+   pdf-link])
 
 (defn summary [{:keys [basics]}]
-  (list
+  [:div.summary
    [:h2 "Summary"]
-   [:p.summary (:content (:summary basics))]))
+   [:p.summary (:content (:summary basics))]])
 
 (defn education [{:keys [education]}]
-  (list
+  [:div.education
    [:h2 (:title education)]
    [:ul.education
     (for [entry (:content education)]
       [:li
        [:p
-        (str (:study-type entry) " in " (:area entry))
-        [:br] [:a {:href (:website entry)} (:institution entry)]]])]))
+        (str (:study-type entry) " in " (:area entry)) [:br]
+        [:a {:href (:website entry)} (:institution entry)]]])]])
 
 (defn today [] (.format (java.text.SimpleDateFormat. "MMMM d, YYYY") (java.util.Date.)))
 (defn updated []
@@ -56,11 +58,9 @@
    [:div.sidebar-content
     (introduction resume-data)
     (links resume-data)
-    pdf-link
     [:hr.divider]
     (summary resume-data)
-    (education resume-data)]
-   (updated)])
+    (education resume-data)]])
 
 ;; dates in EDN are given in [yyyy "Month" dd] format
 (defn date [[year month day]]
@@ -71,7 +71,7 @@
     (str (date start) " to " (date end))))
 
 (defn experience [{:keys [fulltime-experience]}]
-  (list
+  [:div.experience
    [:h2 (:title fulltime-experience)]
    [:ul.experience
     (for [entry (:content fulltime-experience)]
@@ -85,7 +85,7 @@
            [:ul.details (for [bullet (:bullets entry)]
                           [:li bullet])]]
        [:ul.details (for [bullet (:bullets entry)]
-                      [:li bullet])]])]))
+                      [:li bullet])]])]])
 
 (defn render [resume-data]
   (html5
@@ -94,7 +94,8 @@
     (sidebar resume-data)
     [:div.main
      [:div.main-content
-      (experience resume-data)]]]))
+      (experience resume-data)]]
+    (updated)]))
 
 (defn page []
   (render (edn/read-string (slurp (io/resource "experience.edn")))))
