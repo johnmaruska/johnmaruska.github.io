@@ -5,13 +5,15 @@
    [clojure.edn :as edn]
    [clojure.java.io :as io]))
 
+(def stylesheet "resume.css")
+
 (defn head [{:keys [basics]}]
   [:head
    [:meta {:name "description" :content (str (:name basics) " - " (:label basics))}]
    [:meta {:name "keywords" :content (map name (:meta-keywords basics))}]
    [:meta {:name "viewport" :content "initial-scale=1,width=device-width"}]
    [:meta {:content "no-cache" :http-equiv "cache-control"}]
-   [:link {:rel "stylesheet" :href "styles.css" :type "text/css"}]
+   [:link {:rel "stylesheet" :href stylesheet :type "text/css"}]
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css?family=Space+Mono|Muli"}]
    [:link {:rel "stylesheet" :href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}]
    [:title (str (:name basics) ". " (:label basics))]])
