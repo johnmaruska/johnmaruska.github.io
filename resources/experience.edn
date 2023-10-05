@@ -3,16 +3,6 @@
   :label         "Software Engineer"
   :email         "jackmaruska@gmail.com"
   :location      "Saint Louis, MO"
-  :meta-keywords []                     ; TODO: populate
-  :contact-links [{:network "jackmaruska@gmail.com"
-                   :url     "mailto:jackmaruska@gmail.com"
-                   :icon    "envelope"}
-                  {:network "LinkedIn"
-                   :url     "https://www.linkedin.com/in/johnwmaruska"
-                   :icon    "linkedin"}
-                  {:network "GitHub"
-                   :url     "https://github.com/johnmaruska"
-                   :icon    "github"}]
   :summary       {:title          "Summary"
                   :bullet-points? false
                   :content "Software engineer, backend-focused but
@@ -76,6 +66,7 @@
                 "Designed and implemented a ReactJS front-end to visually troubleshoot ingested geospatial data."]
     :keywords  [:clojure :react :javascript :ruby :aws :s3 :dynamodb :postgres
                 :ruby-on-rails :scala :arcgis :jenkins :bash]}]}
+
  :additional-experience
  [{:company   "Trilogy Education (now part of edX)"
    :website   "https://www.edx.org/boot-camps/about"

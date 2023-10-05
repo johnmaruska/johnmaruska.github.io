@@ -1,22 +1,20 @@
 (ns resume
   (:require
-   [clojure.string :as string]
-   [hiccup.page :refer [html5]]
    [clojure.edn :as edn]
-   [clojure.java.io :as io]))
-
-(def stylesheet "resume.css")
+   [clojure.java.io :as io]
+   [clojure.string :as string]
+   [hiccup.page :refer [html5]]))
 
 (defn head [{:keys [basics]}]
   [:head
-   [:meta {:name "description" :content (str (:name basics) " - " (:label basics))}]
-   [:meta {:name "keywords" :content (map name (:meta-keywords basics))}]
+   ;; Shared
    [:meta {:name "viewport" :content "initial-scale=1,width=device-width"}]
    [:meta {:content "no-cache" :http-equiv "cache-control"}]
-   [:link {:rel "stylesheet" :href stylesheet :type "text/css"}]
    [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css?family=Space+Mono|Muli"}]
    [:link {:rel "stylesheet" :href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}]
-   [:title (str (:name basics) ". " (:label basics))]])
+   ;; Unique
+   [:link {:rel "stylesheet" :href "resume.css" :type "text/css"}]
+   [:title "John Maruska - Resume"]])
 
 (defn introduction [{:keys [basics]}]
   [:div.introduction
@@ -29,10 +27,11 @@
 
 (defn links [{:keys [basics]}]
   [:div.links
-   (for [profile (:contact-links basics)]
-     [:a {:href (:url profile)}
-      [:i {:class (str "fa fa-" (:icon profile))}]])
-   pdf-link])
+   (for [{:keys [url icon]} (:contact-links basics)]
+     [:a {:href url}
+      [:i {:class icon}]])
+   ;; pdf-link  ; uncomment when pdf TODO is done.
+   ])
 
 (defn summary [{:keys [basics]}]
   [:div.summary
@@ -97,5 +96,12 @@
       (experience resume-data)]]
     (updated)]))
 
+(defn resume-links []
+  (filter :resume? (edn/read-string (slurp (io/resource "links.edn")))))
+
+(defn resume-data []
+  (assoc-in (edn/read-string (slurp (io/resource "experience.edn")))
+            [:basics :contact-links] (resume-links)))
+
 (defn page []
-  (render (edn/read-string (slurp (io/resource "experience.edn")))))
+  (render (resume-data)))

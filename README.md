@@ -11,6 +11,13 @@ hoping to expand in the future.
     clojure -M:generate
 
 
+## TODO
+- Style links page
+- Home page
+- Switch to a static site generator when this gets unwieldy
+- Look into printing to PDF. Followup, check resume scanners
+
+
 ## Acknowledgements
 
 Design of the `resume` page commissioned from Kat Garnier aka
@@ -18,3 +25,5 @@ Design of the `resume` page commissioned from Kat Garnier aka
 
 Structure based off [agzam/resume](https://github.com/agzam/resume)
 and changed to suit my personal taste.
+
+Links page inspired by [ChaelCodes' blogpost](https://www.chael.codes/2023/10/04/jekyll-links-page.html)
