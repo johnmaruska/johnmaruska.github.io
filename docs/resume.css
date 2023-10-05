@@ -128,6 +128,7 @@ p.position {
 
 /* responsive */
 
+
 @media screen and (max-width: 777px) {
     .sidebar {
         width: 100%;

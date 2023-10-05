@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Muli, sans-serif;
+    background-color: #FDF6E3;
+    color: #002B36;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.column {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #002B36;
+    color: #FdF6E3;
+}
+
+p {
+    text-align: center;
+}
+
+#links {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+#links li {
+    margin: 1em;
+}
+#links li a {
+    display: block;
+    text-align: center;
+    background-color: #FDF6E3;
+    color: #002B36;
+
+    margin: 1em 2em;
+    padding: 4%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#links li a i {
+    margin: 8px 8px;
+}

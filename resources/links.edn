@@ -1,12 +1,4 @@
-[{:network "jackmaruska@gmail.com"
-  :url     "mailto:jackmaruska@gmail.com"
-  :icon    "fa fa-envelope"
-  :resume? true}
- {:network "LinkedIn"
-  :url     "https://www.linkedin.com/in/johnwmaruska"
-  :icon    "fa fa-linkedin"
-  :resume? true}
- {:network "GitHub"
+[{:network "GitHub"
   :url     "https://github.com/johnmaruska"
   :icon    "fa fa-github"
   :resume? true}
@@ -15,7 +7,15 @@
   :icon    "fa fa-twitter"}
  {:network "Mastodon - Hachyderm"
   :url     "https://hachyderm.io/@johnmaruska"
-  :icon    "fa fa-mastodon"}
+  :icon    "fa-brands fa-mastodon"}
  {:network "Cohost"
   :url     "https://cohost.org/johnmaruska"
-  :icon    nil}]
+  :icon    nil}
+ {:network "LinkedIn"
+  :url     "https://www.linkedin.com/in/johnwmaruska"
+  :icon    "fa fa-linkedin"
+  :resume? true}
+ {:network "jackmaruska@gmail.com"
+  :url     "mailto:jackmaruska@gmail.com"
+  :icon    "fa fa-envelope"
+  :resume? true}]

@@ -11,15 +11,18 @@
     [:meta {:name "viewport" :content "initial-scale=1,width=device-width"}]
     [:meta {:content "no-cache" :http-equiv "cache-control"}]
     [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css?family=Space+Mono|Muli"}]
-    [:link {:rel "stylesheet" :href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}]
+    [:script {:src "https://kit.fontawesome.com/729e48c2e5.js" :crossorigin "anonymous"}]
     ;; Unique
     [:link {:rel "stylesheet" :href "links.css" :type "text/css"}]
     [:title "John Maruska - Links"]]
    [:body
-    [:ul
-     (for [{:keys [network url icon]} links-data]
-       [:li [:a {:href url :target "_blank"}
-             [:i {:class icon}] network]])]]))
+    [:div.column
+     [:div#links-profile
+      [:p "These are all the accounts I associate with my real name. I've been full hermit/lurker mode on most of these but I'm hoping to change that soonish."]]
+     [:ul#links
+      (for [{:keys [network url icon]} links-data]
+        [:li [:a {:href url :target "_blank"}
+              [:i {:class icon}] network]])]]]))
 
 (defn page []
   (render (edn/read-string (slurp (io/resource "links.edn")))))

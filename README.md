@@ -14,6 +14,7 @@ hoping to expand in the future.
 ## TODO
 - Style links page
 - Home page
+- consistent header across home, links, etc. Maybe resume?
 - Switch to a static site generator when this gets unwieldy
 - Look into printing to PDF. Followup, check resume scanners
 
