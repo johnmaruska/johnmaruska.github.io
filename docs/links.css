@@ -16,8 +16,20 @@ body {
     color: #FdF6E3;
 }
 
+img#avatar {
+    border-radius: 50%;
+    border: .2em solid;
+
+    margin: 1em auto;
+    display: block;
+    padding: 0;
+    width: 40%;
+}
+
 p {
     text-align: center;
+    font-size: 1.1em;
+    margin: 1em;
 }
 
 #links {
@@ -33,7 +45,6 @@ p {
     text-align: center;
     background-color: #FDF6E3;
     color: #002B36;
-
     margin: 1em 2em;
     padding: 4%;
     font-weight: bold;
