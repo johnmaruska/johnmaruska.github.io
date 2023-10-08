@@ -40,9 +40,9 @@
 
 (defn education [{:keys [education]}]
   [:div.education
-   [:h2 (:title education)]
+   [:h2 "Education"]
    [:ul.education
-    (for [entry (:content education)]
+    (for [entry education]
       [:li
        [:p
         (str (:study-type entry) " in " (:area entry)) [:br]
@@ -69,11 +69,11 @@
     (date start)
     (str (date start) " to " (date end))))
 
-(defn experience [{:keys [fulltime-experience]}]
+(defn experience [{:keys [professional-experience]}]
   [:div.experience
-   [:h2 (:title fulltime-experience)]
+   [:h2 "Professional Experience"]
    [:ul.experience
-    (for [entry (:content fulltime-experience)]
+    (for [entry professional-experience]
       [:li.company
        [:a.name {:href (:website entry)} (:company entry)]
        [:div.position
@@ -86,6 +86,13 @@
        [:ul.details (for [bullet (:bullets entry)]
                       [:li bullet])]])]])
 
+(defn publications [{:keys [publications]}]
+  [:div.publications
+   [:h2 "Publications"]
+   [:ul.publications
+    (for [entry publications]
+      [:li entry])]])
+
 (defn render [resume-data]
   (html5
    (head resume-data)
@@ -93,7 +100,8 @@
     (sidebar resume-data)
     [:div.main
      [:div.main-content
-      (experience resume-data)]]
+      (experience resume-data)
+      (publications resume-data)]]
     (updated)]))
 
 (defn resume-links []

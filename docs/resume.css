@@ -126,6 +126,10 @@ p.position {
     content: "\00BB  ";
 }
 
+.publications li::before {
+    content: "\00BB  ";
+}
+
 /* responsive */
 
 

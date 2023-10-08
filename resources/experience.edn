@@ -1,11 +1,11 @@
 {:basics
- {:name          "John Maruska"
-  :label         "Software Engineer"
-  :email         "jackmaruska@gmail.com"
-  :location      "Saint Louis, MO"
-  :summary       {:title          "Summary"
-                  :bullet-points? false
-                  :content "Software engineer, backend-focused but
+ {:name     "John Maruska"
+  :label    "Software Engineer"
+  :email    "jackmaruska@gmail.com"
+  :location "Saint Louis, MO"
+  :summary  {:title          "Summary"
+             :bullet-points? false
+             :content        "Software engineer, backend-focused but
                   fullstack capable. Clojure and functional
                   programming enthusiast. Interested in learning
                   static-typed compiled langs and broadening
@@ -13,62 +13,48 @@
                   worker since 2019 but open to local work in Saint
                   Louis."}}
 
- :fulltime-experience
- {:title   "Professional Experience"
-  :content
-  [{:company   "Incremental"
-    :website   "https://incremental.com/"
-    :industry  "AdTech"
-    :location  "Remote (based in Baltimore, MD)"
-    :position  "Senior Software Engineer"
-    :start     [2022 "Apr" 25] :end [2023 "Apr" 20]
-    :highlight "Incremental is a retails analytics company that aims to surface impact of retail decisions."
-    :bullets   ["Iteratively improved legacy data pipeline into new design"
-                "Implemented ingestion of several third-party data sources into standardized internal format"
-                "Mentored developers new to Clojure and functional programming"]
-    :keywords  [:aws :redshift :athena :glue :step-functions :serverless :terraform :kubernetes
-                :clojure :python :postgres :bash]}
+ :professional-experience
+ [{:company   "Incremental"
+   :website   "https://incremental.com/"
+   :industry  "AdTech"
+   :location  "Remote (based in Baltimore, MD)"
+   :position  "Senior Software Engineer"
+   :start     [2022 "Apr" 25] :end [2023 "Apr" 20]
+   :highlight "Incremental is a retails analytics company that aims to surface impact of retail decisions."
+   :bullets   ["Integrated with and ingested data from several third-party data providers"
+               "Redesigned ETL pipeline to be faster, cheaper, and more observable"
+               "Mentored new developers as they learned Clojure"]
+   :keywords  [:aws :redshift :athena :glue :step-functions :s3 :lambda :serverless :terraform :kubernetes
+               :clojure :python :postgres :bash]}
 
-   {:company   "Washington University School of Medicine"
-    :website   "https://medicine.wustl.edu/"
-    :industry  "BioTech"
-    :location  "St. Louis, MO"
-    :position  "Application Developer"
-    :start     [2021 "Feb" 15] :end [2022 "Apr" 15]
-    :highlight "Worked primarily with the Griffith Lab transitioning bioinformatics workflows to run on GCP"
-    :bullets   ["Designed and implemented cloud solutions for running precision-oncology workflows"
-                "Integrated cloud solution with local cluster provenance database"
-                "Wrote technical documentation tailored to specific use cases researchers encounter"]
-    :keywords  [:gcp :python :bash :cromwell :cwl :wdl :terraform :postgres]}
-   {:company   "Guaranteed Rate"
-    :website   "https://www.rate.com/"
-    :industry  "Mortgage"
-    :location  "Remote (based in Chicago, IL)"
-    :position  "Software Engineer"
-    :start     [2019 "July" 29] :end [2021 "Jan" 29]
-    :highlight "Guaranteed Rate is a mortgage company. My team, the borrower data team, focused on automating verification of borrower data and later the MyAccount project"
-    :bullets   ["Created new borrower experience MyAccount, collaborating with designers, front-end engineer, and integrating with dependency teams" ; TODO: shorten
-                "Collaborated remotely as the team grew from five partially-remote backend engineers to twelve fully-remote interdisciplinary members" ; TODO: shorten
-                "Migrated a dozen services from disparate Serverless deploys to one central Terraform repo"
-                "Took ownership for completion and operations of legacy projects"]
-    :keywords  [:clojure :clojurescript :react :aws :s3 :serverless
-                :terraform :kubernetes :nodejs :javascript :postgres :elisp]}
+  {:company   "Washington University School of Medicine"
+   :website   "https://medicine.wustl.edu/"
+   :industry  "BioTech"
+   :location  "St. Louis, MO"
+   :position  "Application Developer"
+   :start     [2021 "Feb" 15] :end [2022 "Apr" 15]
+   :highlight "Worked primarily with the Griffith Lab transitioning bioinformatics workflows to run on GCP"
+   :bullets   ["Designed and implemented cloud solutions for running precision-oncology workflows"
+               "Integrated cloud solution with local cluster provenance database"
+               "Wrote technical documentation tailored to specific use cases researchers encounter"]
+   :keywords  [:gcp :python :bash :cromwell :cwl :wdl :terraform :postgres]}
 
-   {:company   "The Climate Corporation"
-    :website   "https://climate.com/"
-    :industry  "Digital Agriculture"
-    :location  "Creve Coeur, MO"
-    :position  "Software Engineer"
-    :start      [2019 "Jan" nil] :end [2019 "Jul" 24]
-    :highlight "Worked on the Geospatial Engineering team to provide daily satellite data for Climate Fieldview product"
-    :bullets   ["Designed and implemented an event-oriented microservice architecture to replace legacy batch-driven microservice system for generating map images." ; TODO: shorten
-                "Maintained legacy systems for generating map images from satellite data."
-                "Designed and implemented a ReactJS front-end to visually troubleshoot ingested geospatial data."]
-    :keywords  [:clojure :react :javascript :ruby :aws :s3 :dynamodb :postgres
-                :ruby-on-rails :scala :arcgis :jenkins :bash]}]}
+  {:company   "Guaranteed Rate"
+   :website   "https://www.rate.com/"
+   :industry  "Mortgage"
+   :location  "Remote (based in Chicago, IL)"
+   :position  "Software Engineer"
+   :start     [2019 "Jul" 29] :end [2021 "Jan" 29]
+   :highlight "Guaranteed Rate is a mortgage company. My team, the borrower data team, focused on automating verification of borrower data and later the MyAccount project"
+   :bullets   ["Created from scratch a website for a new borrower experience, collaborating with designers and a front-end engineer, and integrating with dependency teams"
+               "Collaborated remotely as the team grew from five partially-remote backend engineers to twelve fully-remote interdisciplinary members"
+               "Rapidly self-taught on new tools and spun-up teammates with those tools"
+               "Migrated a dozen services from disparate Serverless deploys to one central Terraform repo"
+               "Took ownership for completion and operations of legacy or incomplete projects"]
+   :keywords  [:clojure :clojurescript :react :aws :s3 :serverless
+               :terraform :kubernetes :nodejs :javascript :postgres :elisp]}
 
- :additional-experience
- [{:company   "Trilogy Education (now part of edX)"
+  {:company   "Trilogy Education"
    :website   "https://www.edx.org/boot-camps/about"
    :industry  "Education"
    :location  "St. Louis, MO"
@@ -77,49 +63,68 @@
    :highlight nil                       ; TODO
    :bullets   ["Guided students through hurdles with assignments cover Excel, SQL, Python, and JavaScript data visualization."
                "Rapidly familiarised with lessons and assignments when called in last-minute."]
-   :keywords  [:python :javascript :sql :visual-basic]}
+   :keywords  [:python :javascript :sql :visual-basic]
+   :cv-only?  true}
+
+  {:company   "The Climate Corporation"
+   :website   "https://climate.com/"
+   :industry  "Digital Agriculture"
+   :location  "Creve Coeur, MO"
+   :position  "Software Engineer"
+   :start     [2019 "Jan" nil] :end [2019 "Jul" 24]
+   :highlight "Worked on the Geospatial Engineering team to provide daily satellite data for Climate Fieldview product"
+   :bullets   ["Designed and implemented an event-oriented microservice architecture to replace legacy batch-driven microservice system for generating map images."
+               "Maintained legacy systems for generating map images from satellite data."
+               "Designed and implemented a ReactJS front-end to visually troubleshoot ingested geospatial data."]
+   :keywords  [:clojure :react :javascript :ruby :aws :s3 :dynamodb :postgres
+               :ruby-on-rails :scala :arcgis :jenkins :bash]}
 
   {:company   "The Climate Corporation"
    :website   "https://www.climate.com/"
    :industry  "Digital Agriculture"
    :location  "Creve Coeur, MO"
    :position  "Software Engineer Intern"
-   :start     "May 2017" :end "August 2017"
+   :start     [2017 "May" nil] :end [2017 "Aug" nil]
    :highlight nil                       ; TODO
-   :bullets   ["Created a ReactJS front-end to visualize the boundaries of geospatial datasets as a tool for the Support team to troubleshoot common boundary problems before escalating to engineering." ; TODO: shorten
+   :bullets   ["Created a ReactJS front-end to visualize the boundaries of geospatial datasets as a tool for the Support team to troubleshoot common boundary problems before escalating to engineering."
                "Assisted other interns in troubleshooting problems with their own projects in Python, bash, and JavaScript."]
-   :keywords  [:reactjs :javascript :bash]}
+   :keywords  [:reactjs :javascript :bash]
+   :cv-only?  true}
 
-  {:company   "AirZaar (now Strayos)"
+  {:company   "AirZaar"
    :website   "https://www.strayos.com/"
    :industry  "Mining"
    :location  "Remote (based in St. Louis, MO)"
    :position  "Backend Software Consultant"
-   :start     "January, 2017" :end "May, 2017"
+   :start     [2017 "Jan" nil] :end [2017 "May" nil]
    :highlight nil
    :bullets   ["Implemented features within a Ruby on Rails back-end and AngularJS front-end"
                "Rapidly self-taught Ruby on Rails, bash tools, and JavaScript"]
-   :keywords  [:bash :ruby-on-rails :ruby :javascript :angularjs]}
+   :keywords  [:bash :ruby-on-rails :ruby :javascript :angularjs]
+   :cv-only?  true}
 
   {:company   "Missouri S&T Mars Rover Design Team"
    :website   "https://marsrover.mst.edu/"
    :industry  "Aerospace"
    :location  "Rolla, MO"
    :position  "Science Software Developer"
-   :start     "August 2015" :end "May 2017"
+   :start     [2015 "August" nil] :end [2017 "May" nil]
    :highlight "Handled software for the science team covering the sensor telemetry system. Won 1st place Undergraduate Paper in the International Telemetering Conference for co-authoring a paper on the system."
    :bullets   ["Implemented embedded software sensor readings and communication."
                "Designed and implemented a PyQt desktop GUI for displaying scientific data."
                "Co-authored a published white-paper covering the telemetry system."]
-   :keywords  [:python :javascript :c++]}]
+   :keywords  [:python :javascript :c++]
+   :cv-only?  true}]
 
  :education
- {:title   "Education"
-  :content [{:institution "Missouri University of Science and Technology"
-             :website     "https://cs.mst.edu/"
-             :area        "Computer Science"
-             :study-type  "B.S."}
-            {:institution "Missouri University of Science and Technology"
-             :website     "https://ece.mst.edu/"
-             :area        "Computer Engineering"
-             :study-type  "B.S."}]}}
+ [{:institution "Missouri University of Science and Technology"
+   :website     "https://cs.mst.edu/"
+   :area        "Computer Science"
+   :study-type  "B.S."}
+  {:institution "Missouri University of Science and Technology"
+   :website     "https://ece.mst.edu/"
+   :area        "Computer Engineering"
+   :study-type  "B.S."}]
+
+ :publications
+ ["Maruska, J., Schad, J., Kosbar, K. Mars-Colonization Sensor System for Soil Analysis. International Telemetering Conference Proceedings, Volume 52 (2016)"]}
