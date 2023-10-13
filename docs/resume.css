@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: #FDF6E3;
+    color: #002B36;
     font-family: Muli, sans-serif;
 }
 
@@ -34,7 +35,6 @@ a:hover {
 }
 
 .main {
-    color: #002B36;
     margin-left: min(30%, 400px);
     padding: 20px;
     height: 100%;

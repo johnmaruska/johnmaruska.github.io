@@ -12,11 +12,13 @@ hoping to expand in the future.
 
 
 ## TODO
-- Style links page
-- Home page
+- add something to give life to home page. Photos, emoji, etc
+- Move introduction out of raw HTML to a data file
+- create a footer section
+- add RSS feed support
 - consistent header across home, links, etc. Maybe resume?
 - Switch to a static site generator when this gets unwieldy
-- Look into printing to PDF. Followup, check resume scanners
+- Look into printing resume to PDF. Check scanner/auto-loader
 
 
 ## Acknowledgements
