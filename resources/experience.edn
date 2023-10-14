@@ -5,13 +5,32 @@
   :location "Saint Louis, MO"
   :summary  {:title          "Summary"
              :bullet-points? false
-             :content        "Software engineer, backend-focused but
-                  fullstack capable. Clojure and functional
-                  programming enthusiast. Interested in learning
-                  static-typed compiled langs and broadening
-                  experience with data engineering tools. Remote
-                  worker since 2019 but open to local work in Saint
-                  Louis."}}
+             :content        "Results-driven professional with deep dive
+             experience spanning software engineering, feature
+             development and integration, on-time project delivery,
+             data analytics, and application development. Sought for
+             superb analytical skills, with the ability to solve
+             challenging problems using a combination of industry
+             standard and cutting-edge technologies. Proven talent for
+             developing clean, highly efficient code. Skilled at
+             delivering high-impact solutions directly aligned with
+             client and business needs as well as optimizing processes
+             to deepen focus on continuous improvement and
+             optimization. Exceptional knowledge of Clojure, AWS,
+             JavaScript, Python, JIRA, Terraform, Kubernetes,
+             Postgres, Serverless, Bash, and more."}}
+
+ :core-competencies
+ ["Functional Programming"
+  "Software Engineering"
+  "Process Optimization"
+  "Feature Integration"
+  "Full-Stack Development"
+  "Object-Oriented Programming"
+  "Data Migration"
+  "Data Engineering"
+  "Troubleshooting"
+  "Cloud Solutions"]
 
  :professional-experience
  [{:company   "Incremental"
@@ -21,11 +40,34 @@
    :position  "Senior Software Engineer"
    :start     [2022 "Apr" 25] :end [2023 "Apr" 20]
    :highlight "Incremental is a retails analytics company that aims to surface impact of retail decisions."
-   :bullets   ["Integrated with and ingested data from several third-party data providers"
-               "Redesigned ETL pipeline to be faster, cheaper, and more observable"
-               "Mentored new developers as they learned Clojure"]
-   :keywords  [:aws :redshift :athena :glue :step-functions :s3 :lambda :serverless :terraform :kubernetes
-               :clojure :python :postgres :bash]}
+   :bullets
+   ["Served as Senior Software Engineer responsible for championing
+   the development and implementation of innovative technology
+   solutions for a retail media analytics company that connects retail
+   purchase data with advertising campaigns to maximize the value of
+   ad spend."
+
+    "Outperformed established timelines while delivering new features,
+    resulting in increased capacity for service optimization, tooling
+    development, and innovative experimentation. Improvements to the
+    design of the data ingestion pipeline allowed new data sources to
+    be added at a speed greatly exceeding prior expectations."
+
+    "Promoted operational excellence by training and mentoring
+    developers on Clojure and functional programming while exhibiting
+    imperative and object-oriented programming expertise."
+
+    "Optimized new data ingestion time, expanded system visibility,
+    and enabled more efficient response to data inquiries by heading
+    the migration to a new and simplified ETL pipeline."
+
+    "Demonstrated a strong ability to independently drive change,
+    including overseeing the integration of new, standardized data
+    sources into ETL pipeline while requiring zero support from
+    downstream teams."]
+   :keywords [:aws :redshift :athena :glue :ec2 :step-functions :s3 :lambda
+              :clojure :python :postgres :bash  :emacs :elisp :javascript :sql :jira
+              :serverless :terraform :kubernetes :postgres :sql :github-actions]}
 
   {:company   "Washington University School of Medicine"
    :website   "https://medicine.wustl.edu/"
@@ -34,10 +76,22 @@
    :position  "Application Developer"
    :start     [2021 "Feb" 15] :end [2022 "Apr" 15]
    :highlight "Worked primarily with the Griffith Lab transitioning bioinformatics workflows to run on GCP"
-   :bullets   ["Designed and implemented cloud solutions for running precision-oncology workflows"
-               "Integrated cloud solution with local cluster provenance database"
-               "Wrote technical documentation tailored to specific use cases researchers encounter"]
-   :keywords  [:gcp :python :bash :cromwell :cwl :wdl :terraform :postgres]}
+   :bullets
+   ["Maintained responsibility for analyzing diverse approaches and
+   products for on-demand reproducible runs of precision oncology
+   workflows via cloud servers."
+
+    "Leveraged strong project management skills to drive seamless
+    integration of the cloud solution with the local cluster
+    provenance database."
+
+    "Revamped workflow definitions to industry standard to enable use
+    of cloud workflow orchestration tools."
+
+    "Drafted and prepared detailed technical documentation to clearly
+    outline cloud system utilization across various use cases,
+    successfully providing support to researchers."]
+   :keywords [:gcp :python :bash :perl :scala :terraform :cromwell :cwl :wdl]}
 
   {:company   "Guaranteed Rate"
    :website   "https://www.rate.com/"
@@ -45,26 +99,37 @@
    :location  "Remote (based in Chicago, IL)"
    :position  "Software Engineer"
    :start     [2019 "Jul" 29] :end [2021 "Jan" 29]
-   :highlight "Guaranteed Rate is a mortgage company. My team, the borrower data team, focused on automating verification of borrower data and later the MyAccount project"
-   :bullets   ["Created from scratch a website for a new borrower experience, collaborating with designers and a front-end engineer, and integrating with dependency teams"
-               "Collaborated remotely as the team grew from five partially-remote backend engineers to twelve fully-remote interdisciplinary members"
-               "Rapidly self-taught on new tools and spun-up teammates with those tools"
-               "Migrated a dozen services from disparate Serverless deploys to one central Terraform repo"
-               "Took ownership for completion and operations of legacy or incomplete projects"]
-   :keywords  [:clojure :clojurescript :react :aws :s3 :serverless
-               :terraform :kubernetes :nodejs :javascript :postgres :elisp]}
+   :highlight "Guaranteed Rate is a mortgage company. My team, the
+   borrower data team, focused on automating verification of borrower
+   data and later the MyAccount project"
 
-  {:company   "Trilogy Education"
-   :website   "https://www.edx.org/boot-camps/about"
-   :industry  "Education"
-   :location  "St. Louis, MO"
-   :position  "Substitute Teacher's Assistant"
-   :start     [2019 "Jun" 12] :end [2020 "Mar" nil]
-   :highlight nil                       ; TODO
-   :bullets   ["Guided students through hurdles with assignments cover Excel, SQL, Python, and JavaScript data visualization."
-               "Rapidly familiarised with lessons and assignments when called in last-minute."]
-   :keywords  [:python :javascript :sql :visual-basic]
-   :cv-only?  true}
+   :bullets
+   ["Aligned objectives and bridged communications with designers,
+   frontend engineers, and dependency teams to develop and launch a
+   user-friendly website to support new borrowers."
+
+    "Owned successful completion of various legacy and incomplete
+    projects to drive value for the business, namely the core
+    TransferSafe service previously owned by a team split in a
+    reorganization, and a few legacy .NET services that needed
+    continued maintenance."
+
+    "Fostered collaborative working relationships with colleagues
+    remotely, effectively navigating team growth from five partially
+    remote backend engineers to 12 fully remote interdisciplinary
+    staff."
+
+    "Learned and utilized new skills in an efficient manner based on
+    business and project needs, including independently learning
+    Terraform and Re-Frame/Reagent libraries; trained staff to develop
+    skillsets."
+
+    "Strategized and led the complete migration of 12+ services from
+    disparate, Serverless stacks to a standardized Terraform managed
+    infrastructure."]
+   :keywords [:clojure :clojurescript  :javascript :python :nodejs :reagent :re-frame :react :elisp
+              :aws :s3 :serverless :step-functions :sqs :terraform :kubernetes :postgres :emacs
+              :github-actions :jira ]}
 
   {:company   "The Climate Corporation"
    :website   "https://climate.com/"
@@ -73,11 +138,23 @@
    :position  "Software Engineer"
    :start     [2019 "Jan" nil] :end [2019 "Jul" 24]
    :highlight "Worked on the Geospatial Engineering team to provide daily satellite data for Climate Fieldview product"
-   :bullets   ["Designed and implemented an event-oriented microservice architecture to replace legacy batch-driven microservice system for generating map images."
-               "Maintained legacy systems for generating map images from satellite data."
-               "Designed and implemented a ReactJS front-end to visually troubleshoot ingested geospatial data."]
-   :keywords  [:clojure :react :javascript :ruby :aws :s3 :dynamodb :postgres
-               :ruby-on-rails :scala :arcgis :jenkins :bash]}
+   :bullets
+   ["Improved the efficiency and quality of map images by
+   transitioning the legacy batch-driven, service-oriented
+   microservices system to an event-oriented microservices
+   architecture."
+
+    "Decreased development time related to business logic changes and
+    optimized system visibility by transitioning logic filtering and
+    status tracking processes for ingested geospatial datasets from
+    the legacy pipeline to a separate service."
+
+    "Achieved Engineering Department Award for geospatial ingestion pipeline redesign."
+
+    "Tasked with overseeing legacy services for map image generation
+    from geospatial datasets."]
+   :keywords [:clojure :ruby :scala :javascript :bash :python
+              :react :ruby-on-rails :aws :postgres :jenkins]}
 
   {:company   "The Climate Corporation"
    :website   "https://www.climate.com/"
@@ -86,10 +163,21 @@
    :position  "Software Engineer Intern"
    :start     [2017 "May" nil] :end [2017 "Aug" nil]
    :highlight nil                       ; TODO
-   :bullets   ["Created a ReactJS front-end to visualize the boundaries of geospatial datasets as a tool for the Support team to troubleshoot common boundary problems before escalating to engineering."
-               "Assisted other interns in troubleshooting problems with their own projects in Python, bash, and JavaScript."]
-   :keywords  [:reactjs :javascript :bash]
-   :cv-only?  true}
+   :bullets
+   ["Streamlined troubleshooting and escalated issue resolution
+   processes by visualizing individual geospatial dataset boundaries
+   via a React.js frontend; completed an expanded version of the
+   project later on."
+
+    "Drove optimal product adoption of the visualization tool by
+    training the support team, resulting in a reduced number of
+    escalated tickets, decreased engineering time spent on support,
+    and increased time for feature improvement."
+
+    "Mentored and supported interns on Python, Bash, and geospatial
+    team services-related issues."]
+   :keywords [:react :javascript :bash]
+   :cv-only? true}
 
   {:company   "AirZaar"
    :website   "https://www.strayos.com/"
@@ -98,10 +186,25 @@
    :position  "Backend Software Consultant"
    :start     [2017 "Jan" nil] :end [2017 "May" nil]
    :highlight nil
-   :bullets   ["Implemented features within a Ruby on Rails back-end and AngularJS front-end"
-               "Rapidly self-taught Ruby on Rails, bash tools, and JavaScript"]
-   :keywords  [:bash :ruby-on-rails :ruby :javascript :angularjs]
-   :cv-only?  true}
+   :bullets
+   ["Strengthened knowledge of Ruby on Rails, Bash tools, and
+   JavaScript through independent study in order to support new
+   feature integration into a Ruby on Rails backend and AngularJS
+   frontend. Added simulation of boreholes in a quarry wall, and
+   export of those boreholes to a printable PDF schematic."
+
+    "Navigated complex challenges, issues, and obstacles with an
+    innovative and solution-focused mindset."
+
+    "Drove continuous improvement by identifying inefficiencies and
+    implementing streamlined solutions."
+
+    "Translated complex technical concepts into simple language for
+    non-technical stakeholders."
+
+    "Gathered and analyzed user feedback to identify feature gaps and opportunities for optimization."]
+   :keywords [:javascript :ruby :bash :ruby-on-rails :angularjs]
+   :cv-only? true}
 
   {:company   "Missouri S&T Mars Rover Design Team"
    :website   "https://marsrover.mst.edu/"
@@ -109,22 +212,64 @@
    :location  "Rolla, MO"
    :position  "Science Software Developer"
    :start     [2015 "August" nil] :end [2017 "May" nil]
-   :highlight "Handled software for the science team covering the sensor telemetry system. Won 1st place Undergraduate Paper in the International Telemetering Conference for co-authoring a paper on the system."
-   :bullets   ["Implemented embedded software sensor readings and communication."
-               "Designed and implemented a PyQt desktop GUI for displaying scientific data."
-               "Co-authored a published white-paper covering the telemetry system."]
-   :keywords  [:python :javascript :c++]
-   :cv-only?  true}]
+   :highlight "Handled software for the science team covering the
+   sensor telemetry system. Won 1st place Undergraduate Paper in the
+   International Telemetering Conference for co-authoring a paper on
+   the system."
+
+   :bullets
+   ["Participated in the annual Mars Society’s University Rover
+   Challenge, resulting in achieving First Place in the Phobos
+   Division with the Zenith Rover in 2016 and First Place Overall with
+   the Gryphon Rover in 2017."
+
+    "Planned and managed the integration of embedded software sensor
+    readings and communication to enable interfacing with the
+    redesigned RoveComm protocol."
+
+    "Built and integrated a PyQt desktop GUI to enable the display of scientific data."
+
+    "Accomplished the First Place Undergraduate Paper Award by writing
+    and publishing a white-paper on the telemetering system for the
+    International Telemetering Conference in 2016."
+
+    "Utilized programming expertise to mentor junior team members on
+    embedded systems and GUI design."]
+   :keywords [:python :javascript :c++]
+   :cv-only? true}]
 
  :education
  [{:institution "Missouri University of Science and Technology"
    :website     "https://cs.mst.edu/"
    :area        "Computer Science"
-   :study-type  "B.S."}
+   :study-type  "B.S."
+   :term        "December, 2017"}
   {:institution "Missouri University of Science and Technology"
    :website     "https://ece.mst.edu/"
    :area        "Computer Engineering"
-   :study-type  "B.S."}]
+   :study-type  "B.S."
+   :term        "December, 2017"}]
 
  :publications
- ["Maruska, J., Schad, J., Kosbar, K. Mars-Colonization Sensor System for Soil Analysis. International Telemetering Conference Proceedings, Volume 52 (2016)"]}
+ ["Maruska, J., Schad, J., Kosbar, K. Mars-Colonization Sensor System for Soil Analysis. International Telemetering Conference Proceedings, Volume 52 (2016)"]
+
+ :professional-affiliations []
+
+ :awards-and-honors
+ ["Engineering Department Award, The Climate Corporation, 2017: Recognized for redesigning the geospatial ingestion pipeline."
+  "First Place Overall, Mars Society’s University Rover Challenge, 2017"
+  "First Place – Phobos Division, Mars Society’s University Rover Challenge, 2016"
+  "First Place Undergraduate Paper, International Telemetering Conference, 2016"
+  "John Berenka Science Award, Mars Society’s University Rover Challenge, 2016"]
+
+ :volunteerism-and-community-involvement
+ ["Co-Organizer & Host, STL Clojure Meetup, 2018"
+  "Co-Organizer & Host, Arch Lisp Meetup, 2018"
+  "Emphasis Area Workshop Chair, IEEE Missouri S&T Chapter, 2016 to 2017"]
+
+ :proficiencies
+ {"DevOps"    ["AWS" "GCP" "Jenkins" "Terraform" "Serverless" "Docker" "Kubernetes"]
+  "Databases" ["Postgres" "DynamoDB" "MongoDB" "Athena" "Redshift" "neo4j"]
+  "Dev Tools" ["Emacs" "Emacs Lisp" "Git" "Bash" "Nix"]
+  "Backend"   ["Clojure" "Python" "NodeJS" "Elixir" "Ruby on Rails" "REST" "ETL" "Microservices" "Monolith"]
+  "Frontend"  ["ClojureScript" "ReactJS" "Reagent" "Re-frame" "TailwindCSS" "AngularJS" "HTML5" "CSS3"]}}

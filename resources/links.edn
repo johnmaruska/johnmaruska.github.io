@@ -2,6 +2,9 @@
   :url     "https://github.com/johnmaruska"
   :icon    "fa fa-github"
   :resume? true}
+ {:network "BlueSky"
+  :url     "https://bsky.app/profile/johnmaruska.bsky.social"
+  :icon    "fa fa-cloud"}
  {:network "Twitter"
   :url     "https://twitter.com/john_maruska"
   :icon    "fa fa-twitter"}

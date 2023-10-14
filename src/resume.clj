@@ -22,20 +22,15 @@
    [:p.role (:label basics)]
    [:p.location (:location basics)]])
 
-(def pdf-link
-  [:a.pdf-link {:href "resume.pdf"} [:i {:class "fa fa-file-pdf-o"}]])
-
 (defn links [{:keys [basics]}]
   [:div.links
    (for [{:keys [url icon]} (:contact-links basics)]
      [:a {:href url}
-      [:i {:class icon}]])
-   ;; pdf-link  ; uncomment when pdf TODO is done.
-   ])
+      [:i {:class icon}]])])
 
 (defn summary [{:keys [basics]}]
   [:div.summary
-   [:h2 "Summary"]
+   [:h2 "Professional Profile"]
    [:p.summary (:content (:summary basics))]])
 
 (defn education [{:keys [education]}]
@@ -44,9 +39,9 @@
    [:ul.education
     (for [entry education]
       [:li
-       [:p
-        (str (:study-type entry) " in " (:area entry)) [:br]
-        [:a {:href (:website entry)} (:institution entry)]]])]])
+       [:a {:href (:website entry)} (:institution entry)]
+       ", " (:study-type entry) " in " (:area entry)
+       ", " (:term entry)])]])
 
 (defn today [] (.format (java.text.SimpleDateFormat. "MMMM d, YYYY") (java.util.Date.)))
 (defn updated []
@@ -58,8 +53,7 @@
     (introduction resume-data)
     (links resume-data)
     [:hr.divider]
-    (summary resume-data)
-    (education resume-data)]])
+    (summary resume-data)]])
 
 ;; dates in EDN are given in [yyyy "Month" dd] format
 (defn date [[year month day]]
@@ -79,10 +73,6 @@
        [:div.position
         [:p.position (:position entry)] [:p.interval (interval entry)]]
        [:p.keywords (string/join ", " (map name (:keywords entry)))]
-       #_ [:div.details
-           [:p (or (:highlight entry) "TODO")]
-           [:ul.details (for [bullet (:bullets entry)]
-                          [:li bullet])]]
        [:ul.details (for [bullet (:bullets entry)]
                       [:li bullet])]])]])
 
@@ -93,6 +83,13 @@
     (for [entry publications]
       [:li entry])]])
 
+(defn proficiencies [{:keys [proficiencies]}]
+  [:div.proficiencies
+   [:h2 "Prof​iciencies"]
+   [:ul.proficiencies
+    (for [[category values] proficiencies]
+      [:li [:b category ": "] (string/join ", " values)])]])
+
 (defn render [resume-data]
   (html5
    (head resume-data)
@@ -101,7 +98,9 @@
     [:div.main
      [:div.main-content
       (experience resume-data)
-      (publications resume-data)]]
+      (education resume-data)
+      (publications resume-data)
+      (proficiencies resume-data)]]
     (updated)]))
 
 (defn resume-links []
