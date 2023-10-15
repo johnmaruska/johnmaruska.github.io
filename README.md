@@ -6,9 +6,17 @@ hoping to expand in the future.
 
 ## Commands
 
+### Requirements
+
+Need a working install of Clojure and Java 11, so `clojure` CLI works.
+
+Also need the following packages:
+
+    brew install tidy-html5
+
 ### Generate new files
 
-    clojure -M:generate
+    ./generate.sh
 
 
 ## TODO
@@ -19,7 +27,6 @@ hoping to expand in the future.
 - consistent header across home, links, etc. Maybe resume?
 - Switch to a static site generator when this gets unwieldy
 - Look into printing resume to PDF. Check scanner/auto-loader
-
 
 ## Acknowledgements
 
