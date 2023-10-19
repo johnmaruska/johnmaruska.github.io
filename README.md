@@ -12,7 +12,7 @@ Need a working install of Clojure and Java 11, so `clojure` CLI works.
 
 Also need the following packages:
 
-    brew install tidy-html5
+    brew install tidy-html5 pandoc
 
 ### Generate new files
 
