@@ -1,8 +1,9 @@
 (ns shared
   (:require [hiccup.util :refer [escape-html]]))
 
-(defn head [{:keys [title css-file css-directory]
-             :or {css-directory ""}} & body]
+(def ^:dynamic *relative-to-root* "")
+
+(defn head [{:keys [title css-file]} & body]
   [:head
    ;; Shared
    [:meta {:name "viewport"
@@ -13,7 +14,9 @@
            :href "https://fonts.googleapis.com/css?family=Space+Mono|Muli"}]
    [:script {:src "https://kit.fontawesome.com/729e48c2e5.js"
              :crossorigin "anonymous"}]
-   [:link {:rel "stylesheet" :href (str css-directory "site.css") :type "text/css"}]
+   [:link {:rel "stylesheet"
+           :href (str *relative-to-root* "site.css")
+           :type "text/css"}]
    [:link {:rel "stylesheet" :href css-file :type "text/css"}]
    [:title (escape-html title)]
    body])

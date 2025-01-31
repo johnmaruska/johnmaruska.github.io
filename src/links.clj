@@ -8,7 +8,7 @@
 
 (def title "John Maruska - Links")
 (def css-file "links.css")
-(def profile-pic-asset "profile_picture_512x521.png")
+(def profile-pic-asset "assets/profile_picture_512x521.png")
 (def profile-pic-alt-text "profile pic of John. Long hair, full beard, glasses.")
 (def intro-paragraph "These are all the accounts I associate with my real name. I've been full hermit/lurker mode on most of these but I'm hoping to change that soonish.")
 (def data-file "links.edn")
