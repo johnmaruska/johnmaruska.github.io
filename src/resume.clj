@@ -1,26 +1,20 @@
 (ns resume
   (:require
+   [shared :refer [head]]
    [clojure.edn :as edn]
    [clojure.java.io :as io]
    [clojure.string :as string]
-   [hiccup.page :refer [html5]]))
+   [hiccup.page :refer [html5]]
+   [hiccup.util :refer [escape-html]]))
 
-(defn head [{:keys [basics]}]
-  [:head
-   ;; Shared
-   [:meta {:name "viewport" :content "initial-scale=1,width=device-width"}]
-   [:meta {:content "no-cache" :http-equiv "cache-control"}]
-   [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css?family=Space+Mono|Muli"}]
-   [:link {:rel "stylesheet" :href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}]
-   ;; Unique
-   [:link {:rel "stylesheet" :href "resume.css" :type "text/css"}]
-   [:title "John Maruska - Resume"]])
+(def title "John Maruska - Resume")
+(def css-file "resume.css")
 
 (defn introduction [{:keys [basics]}]
   [:div.introduction
-   [:h1.name (:name basics)]
-   [:p.role (:label basics)]
-   [:p.location (:location basics)]])
+   [:h1.name (escape-html (:name basics))]
+   [:p.role (escape-html (:label basics))]
+   [:p.location (escape-html (:location basics))]])
 
 (defn links [{:keys [basics]}]
   [:div.links
@@ -31,7 +25,7 @@
 (defn summary [{:keys [basics]}]
   [:div.summary
    [:h2 "Professional Profile"]
-   [:p.summary (:content (:summary basics))]])
+   [:p.summary (escape-html (:content (:summary basics)))]])
 
 (defn education [{:keys [education]}]
   [:div.education
@@ -39,11 +33,14 @@
    [:ul.education
     (for [entry education]
       [:li
-       [:a {:href (:website entry)} (:institution entry)]
-       ", " (:study-type entry) " in " (:area entry)
-       ", " (:term entry)])]])
+       [:a {:href (:website entry)} (escape-html (:institution entry))]
+       (escape-html (str
+                     ", " (:study-type entry) " in " (:area entry)
+                     ", " (:term entry)))])]])
 
-(defn today [] (.format (java.text.SimpleDateFormat. "MMMM d, YYYY") (java.util.Date.)))
+(defn today []
+  (.format (java.text.SimpleDateFormat. "MMMM d, YYYY")
+           (java.util.Date.)))
 (defn updated []
   [:div.updated [:p (str "updated:" (today))]])
 
@@ -69,46 +66,48 @@
    [:ul.experience
     (for [entry professional-experience]
       [:li.company
-       [:a.name {:href (:website entry)} (:company entry)]
+       [:a.name {:href (:website entry)} (escape-html (:company entry))]
        [:div.position
-        [:p.position (:position entry)] [:p.interval (interval entry)]]
-       [:p.keywords (string/join ", " (map name (:keywords entry)))]
+        [:p.position (escape-html (:position entry))]
+        [:p.interval (escape-html (interval entry))]]
+       [:p.keywords (escape-html (string/join ", " (map name (:keywords entry))))]
        [:ul.details (for [bullet (:bullets entry)]
-                      [:li bullet])]])]])
+                      [:li (escape-html bullet)])]])]])
 
 (defn publications [{:keys [publications]}]
   [:div.publications
    [:h2 "Publications"]
    [:ul.publications
     (for [entry publications]
-      [:li entry])]])
+      [:li (escape-html entry)])]])
 
 (defn proficiencies [{:keys [proficiencies]}]
   [:div.proficiencies
    [:h2 "Prof​iciencies"]
    [:ul.proficiencies
     (for [[category values] proficiencies]
-      [:li [:b category ": "] (string/join ", " values)])]])
+      [:li
+       [:b category ": "]
+       (escape-html (string/join ", " values))])]])
 
 (defn render [resume-data]
-  (html5
-   (head resume-data)
-   [:body
-    (sidebar resume-data)
-    [:div.main
-     [:div.main-content
-      (experience resume-data)
-      (education resume-data)
-      (publications resume-data)
-      (proficiencies resume-data)]]
-    (updated)]))
+  (html5 {}
+    (head {:title title :css-file css-file})
+    [:body
+     (sidebar resume-data)
+     [:div.main
+      [:div.main-content
+       (experience resume-data)
+       (education resume-data)
+       (publications resume-data)
+       (proficiencies resume-data)]]
+     (updated)]))
 
-(defn resume-links []
-  (filter :resume? (edn/read-string (slurp (io/resource "links.edn")))))
+(defn fetch-data []
+  (->> (edn/read-string (slurp (io/resource "links.edn")))
+       (filter :resume?)
+       (assoc-in (edn/read-string (slurp (io/resource "experience.edn")))
+                 [:basics :contact-links])))
 
-(defn resume-data []
-  (assoc-in (edn/read-string (slurp (io/resource "experience.edn")))
-            [:basics :contact-links] (resume-links)))
-
-(defn page []
-  (render (resume-data)))
+(defn page-html []
+  (render (fetch-data)))

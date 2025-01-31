@@ -1,0 +1,30 @@
+*  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #FDF6E3;
+    color: #002B36;
+    font-family: Muli, sans-serif;
+    font-size: 1.25em;
+    word-wrap: break-word;
+}
+
+h1, h2 {
+    font-family: "Space Mono", monospace;
+}
+h1.name {
+    margin-top: 0;
+}
+
+a {
+    color: inherit;
+    transition: 0.3s;
+}
+
+a:hover {
+    color:#2aa198;
+}

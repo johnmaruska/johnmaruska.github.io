@@ -1,34 +1,35 @@
 (ns links
   (:require
+   [shared :refer [head]]
+   [hiccup.page :refer [html5]]
+   [hiccup.util :refer [escape-html]]
    [clojure.edn :as edn]
-   [clojure.java.io :as io]
-   [hiccup.page :refer [html5]]))
+   [clojure.java.io :as io]))
+
+(def title "John Maruska - Links")
+(def css-file "links.css")
+(def profile-pic-asset "profile_picture_512x521.png")
+(def profile-pic-alt-text "profile pic of John. Long hair, full beard, glasses.")
+(def intro-paragraph "These are all the accounts I associate with my real name. I've been full hermit/lurker mode on most of these but I'm hoping to change that soonish.")
+(def data-file "links.edn")
 
 (defn render [links-data]
-  (html5
-   [:head
-    ;; Shared
-    [:meta {:name "viewport"
-            :content "initial-scale=1,width=device-width"}]
-    [:meta {:content "no-cache"
-            :http-equiv "cache-control"}]
-    [:link {:rel "stylesheet"
-            :href "https://fonts.googleapis.com/css?family=Space+Mono|Muli"}]
-    [:script {:src "https://kit.fontawesome.com/729e48c2e5.js"
-              :crossorigin "anonymous"}]
-    ;; Unique
-    [:link {:rel "stylesheet" :href "links.css" :type "text/css"}]
-    [:title "John Maruska - Links"]]
-   [:body
-    [:div.column
-     [:div#links-profile
-      [:img#avatar {:src "profile_picture_512x521.png"
-                    :alt "profile pic of John. Long hair, full beard, glasses."}]
-      [:p "These are all the accounts I associate with my real name. I've been full hermit/lurker mode on most of these but I'm hoping to change that soonish."]]
-     [:ul#links
-      (for [{:keys [network url icon]} links-data]
-        [:li [:a {:href url :target "_blank"}
-              [:i {:class icon}] network]])]]]))
+  (html5 {}
+    (head {:title title
+           :css-file css-file})
+    [:body
+     [:div.column
+      [:div#links-profile
+       [:img#avatar {:src profile-pic-asset
+                     :alt (escape-html profile-pic-alt-text)}]
+       [:p (escape-html intro-paragraph)]]
+      [:ul#links
+       (for [{:keys [network url icon]} links-data]
+         [:li [:a {:href url :target "_blank"}
+               [:i {:class icon}] (escape-html network)]])]]]))
 
-(defn page []
-  (render (edn/read-string (slurp (io/resource "links.edn")))))
+(defn fetch-data []
+  (edn/read-string (slurp (io/resource data-file))))
+
+(defn page-html []
+  (render (fetch-data)))

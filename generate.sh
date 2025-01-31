@@ -26,10 +26,11 @@ post-html () {
 
 clojure -M:generate
 
-for POST in posts/*
-do
-    post-html $POST
-done
+# for POST in posts/*
+# do
+#     post-html $POST
+# done
+
 
 for HTML in docs/**.html
 do
