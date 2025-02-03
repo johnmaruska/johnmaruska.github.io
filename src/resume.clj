@@ -1,14 +1,10 @@
 (ns resume
   (:require
-   [shared :refer [head]]
    [clojure.edn :as edn]
    [clojure.java.io :as io]
    [clojure.string :as string]
    [hiccup.page :refer [html5]]
    [hiccup.util :refer [escape-html]]))
-
-(def title "John Maruska - Resume")
-(def css-file "resume.css")
 
 (defn introduction [{:keys [basics]}]
   [:div.introduction
@@ -55,6 +51,7 @@
 ;; dates in EDN are given in [yyyy "Month" dd] format
 (defn date [[year month day]]
   (str month " " year))
+
 (defn interval [{:keys [start end]}]
   (if (nil? end)
     (date start)
@@ -90,24 +87,13 @@
        [:b category ": "]
        (escape-html (string/join ", " values))])]])
 
-(defn render [resume-data]
-  (html5 {}
-    (head {:title title :css-file css-file})
-    [:body
-     (sidebar resume-data)
-     [:div.main
-      [:div.main-content
-       (experience resume-data)
-       (education resume-data)
-       (publications resume-data)
-       (proficiencies resume-data)]]
-     (updated)]))
-
-(defn fetch-data []
-  (->> (edn/read-string (slurp (io/resource "links.edn")))
-       (filter :resume?)
-       (assoc-in (edn/read-string (slurp (io/resource "experience.edn")))
-                 [:basics :contact-links])))
-
-(defn page-html []
-  (render (fetch-data)))
+(defn contents [resume-data]
+  [:<>
+   (sidebar resume-data)
+   [:div.main
+    [:div.main-content
+     (experience resume-data)
+     (education resume-data)
+     (publications resume-data)
+     (proficiencies resume-data)]]
+   (updated)])

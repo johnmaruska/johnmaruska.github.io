@@ -1,9 +1,10 @@
 (ns shared
-  (:require [hiccup.util :refer [escape-html]]))
+  (:require
+   [hiccup.page :refer [html5]]
+   [hiccup.util :refer [escape-html]]))
 
 (def ^:dynamic *relative-to-root* "")
-
-(defn head [{:keys [title css-file]} & body]
+(defn head [{:keys [title css-file]}]
   [:head
    ;; Shared
    [:meta {:name "viewport"
@@ -18,5 +19,15 @@
            :href (str *relative-to-root* "site.css")
            :type "text/css"}]
    [:link {:rel "stylesheet" :href css-file :type "text/css"}]
-   [:title (escape-html title)]
-   body])
+   [:title (escape-html title)]])
+
+
+(defn navbar []
+  [:nav.menu
+   [:ul.navigation
+    [:li [:a {:href "links" :title "Links"}
+          "Links"]]
+    [:li [:a {:href "resume" :title "Resume"}
+          "Resume"]]
+    [:li [:a {:href "posts" :title "posts"}
+          "Posts"]]]])
