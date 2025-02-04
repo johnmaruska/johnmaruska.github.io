@@ -229,6 +229,12 @@ body#resume .section h1 {
 body#resume .section h2 {
     font-size: var(--heading-1-font-size);
 }
+
+
+body#resume .summary p {
+    padding: 0 1rem 1rem;
+}
+
 body#resume .experience .company .name {
     font-size: var(--heading-4-font-size);
 }
