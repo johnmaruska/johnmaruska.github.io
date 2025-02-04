@@ -1,30 +1,101 @@
 /***********************************************************************
  *
+ *                         Predefined Values
+ *
+ ***********************************************************************/
+
+/********
+ **** Font Sizes: Major Second scale factor 1.125
+ *
+ * Display 1 - 51.96px
+ * Display 2 - 46.18px
+ * Heading 1 - 41.05px
+ * Heading 2 - 36.49px
+ * Heading 3 - 32.44px
+ * Heading 4 - 23.83px
+ * Heading 5 - 25.63px
+ * Heading 6 - 22.78px
+ * Body text 1 - 20.25px
+ * Body text 2 - 18px
+ * Body text 3 - 16px (base font size)
+ * Label 1 - 14.22px
+ * Label 2 - 12.62px
+ * Label 3 - 11.24px
+ *
+ * Credit "Size me up" by Saron Yitbarek aka Not A Designer
+ * https://notadesigner.io/p/typographic-scales
+ ********/
+
+* {
+    font-size: 16px;
+}
+/* class version is to use the size for different tags, e.g. `a` */
+h1, .h1 {
+    font-size: 41.05px;
+}
+h2, .h2 {
+    font-size: 36.49px;
+}
+h3, .h3 {
+    font-size: 32.44px;
+}
+h4, .h4 {
+    font-size: 23.83px;
+}
+h5, .h5 {
+    font-size: 25.63px;
+}
+h6, .h6 {
+    font-size: 22.78px;
+}
+
+.label1 {
+    font-size: 14.22px;
+}
+.label2 {
+    font-size: 12.62px;
+}
+.label3 {
+    font-size: 11.24px;
+}
+
+/********
+ **** Margin and Spacing rules
+ *
+ * Use increments of 8px for aligning elements.
+ * 8px , 16px, 24px, ..., 64px, ... 1080px ... 2160px
+ *
+ * Credit "Let's get griddy" by Saron Yitbarek aka Not A Designer
+ * https://notadesigner.io/p/8px-grid
+ ********/
+
+/***********************************************************************
+ *
  *                         Site Theme
  *
  ***********************************************************************/
 
 *  {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 8px;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    margin: 0px;
 }
 
 body {
-    margin: 0;
     background-color: #FDF6E3;
     color: #002B36;
     font-family: Muli, sans-serif;
-    font-size: 1.25em;
     word-wrap: break-word;
 }
 
+/*
 h1, h2 {
     font-family: "Space Mono", monospace;
 }
-h1.name {
-    margin-top: 0;
-}
+*/
 
 a {
     color: inherit;
@@ -35,6 +106,9 @@ a:hover {
     color:#2aa198;
 }
 
+li {
+    margin-left: 16px
+}
 /****************************************
  *
  *         Navbar
@@ -130,7 +204,7 @@ body#links img.avatar {
 
 body#links p {
     text-align: center;
-    font-size: 1.1em;
+    /* font-size: 1.1em; */
     margin: 1em;
 }
 
@@ -150,7 +224,7 @@ body#links .links li a {
     margin: 1em 2em;
     padding: 4%;
     font-weight: bold;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
 }
 body#links .links li a i {
     margin: 8px 8px;
@@ -162,6 +236,33 @@ body#links .links li a i {
  *
  ***********************************************************************/
 
+body#resume {
+    max-width: 70rem;
+}
+
+body#resume .links i.fa {
+    font-size: 2rem;
+    padding: 1rem;
+    transition: 0.3s
+}
+
+body#resume .experience .position {
+    font-weight: bold;
+}
+
+body#resume .experience li.company {
+    margin: 24px;
+}
+
+body#resume ul.experience {
+    list-style: none;
+}
+
+body#resume .section {
+    margin: 24px;
+}
+
+/*
 body#resume .sidebar {
     background-color: #002B36;
     color: #FDF6E3;
@@ -232,7 +333,6 @@ body#resume p.keywords {
     margin: 0 15px 5px 15px;
 }
 
-/* main content */
 
 body#resume .main ul {
     list-style: none;
@@ -272,6 +372,8 @@ body#resume .details li::before {
 body#resume .publications li::before {
     content: "\00BB  ";
 }
+
+*/
 
 /* responsive */
 

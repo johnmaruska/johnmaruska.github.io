@@ -99,56 +99,15 @@
   (html5 {}
     (head {:title resume-title})
     [:body#resume
-     (header-bar)
-     [:div.sidebar
-      [:div.sidebar-content
-       (resume/introduction resume-data)
-       (resume/links resume-data)
-       [:hr.divider]
-       (resume/summary resume-data)]]
-     [:div.main
-      [:div.main-content
-       (resume/experience resume-data)
-       (resume/education resume-data)
-       (resume/publications resume-data)
-       (resume/proficiencies resume-data)]]
+     #_(header-bar)
+     (resume/introduction resume-data)
+     (resume/links resume-data)
+     (resume/summary resume-data)
+     (resume/experience resume-data)
+     (resume/education resume-data)
+     (resume/publications resume-data)
+     (resume/proficiencies resume-data)
      (resume/updated)]))
-
-
-"=============================================================================
-=
-=
-=                  Blog Post Pages
-=
-=
-============================================================================="
-
-(def post-hub-title "Articles")
-(def post-hub-html-file "posts.html")
-
-(defn displayed-date [date]
-  date)
-
-(defn post-hub-page
-  "Render HTML for the blogpost hub page.
-
-  Contains a list of all posts. Not yet paginated or truncated in any way."
-  [posts-meta]
-  (html5 {}
-    (head {:title post-hub-title})
-    [:body#post-hub
-     (header-bar)
-     [:h1 "Articles"]
-     (for [meta posts-meta]
-       (let [title   (-> meta :title first)
-             date    (-> meta :date first)
-             summary (-> meta :summary first)]
-         [:div.post-entry
-          [:div.post-header
-           [:div.post-title title]
-           [:div.post-date date]]
-          [:div.post-summary
-           summary]]))]))
 
 "=============================================================================
 =
@@ -190,3 +149,43 @@
         [:body.blogpost
          (header-bar)
          (:html parsed)]))))
+
+"=============================================================================
+=
+=
+=                  Blog Post Pages
+=
+=
+============================================================================="
+
+(def post-hub-title "Articles")
+(def post-hub-html-file "posts.html")
+
+(defn displayed-date [date]
+  date)
+
+(defn link-to-post [href link-text]
+  [:a {:href href} link-text])
+
+(defn post-hub-page
+  "Render HTML for the blogpost hub page.
+
+  Contains a list of all posts. Not yet paginated or truncated in any way."
+  [post-md-files]
+  (html5 {}
+    (head {:title post-hub-title})
+    [:body#post-hub
+     (header-bar)
+     [:h1 "Articles"]
+     (for [post-md-file post-md-files]
+       (let [meta    (markdown/md-to-meta (slurp post-md-file))
+             href    (post-html-file post-md-file)
+             title   (-> meta :title first)
+             date    (-> meta :date first)
+             summary (-> meta :summary first)]
+         [:div.post-entry
+          [:div.post-header
+           [:div.post-title [:a {:href href} title]]
+           [:div.post-date [:a {:href href} date]]]
+          [:div.post-summary
+           summary]]))]))

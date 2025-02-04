@@ -24,7 +24,7 @@
    [:p.summary (escape-html (:content (:summary basics)))]])
 
 (defn education [{:keys [education]}]
-  [:div.education
+  [:div.education.section
    [:h2 "Education"]
    [:ul.education
     (for [entry education]
@@ -50,28 +50,31 @@
     (str (date start) " to " (date end))))
 
 (defn experience [{:keys [professional-experience]}]
-  [:div.experience
+  [:div.experience.section
    [:h2 "Professional Experience"]
    [:ul.experience
     (for [entry professional-experience]
       [:li.company
-       [:a.name {:href (:website entry)} (escape-html (:company entry))]
-       [:div.position
-        [:p.position (escape-html (:position entry))]
-        [:p.interval (escape-html (interval entry))]]
-       [:p.keywords (escape-html (string/join ", " (map name (:keywords entry))))]
+       [:div
+        [:a.name.h4 {:href (:website entry)}
+         (escape-html (:company entry))]
+        [:h4.interval (escape-html (interval entry))]
+        [:h4.position (escape-html (:position entry))]]
+       [:p.keywords.label1 (escape-html (->> (:keywords entry)
+                                             (map name)
+                                             (string/join ", ")))]
        [:ul.details (for [bullet (:bullets entry)]
                       [:li (escape-html bullet)])]])]])
 
 (defn publications [{:keys [publications]}]
-  [:div.publications
+  [:div.publications.section
    [:h2 "Publications"]
    [:ul.publications
     (for [entry publications]
       [:li (escape-html entry)])]])
 
 (defn proficiencies [{:keys [proficiencies]}]
-  [:div.proficiencies
+  [:div.proficiencies.section
    [:h2 "Prof​iciencies"]
    [:ul.proficiencies
     (for [[category values] proficiencies]

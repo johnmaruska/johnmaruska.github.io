@@ -26,9 +26,7 @@
     (write! pages/links-html-file (pages/links-page links-data)))
 
   ;; Generate post hub
-  (let [posts-meta (map #(markdown/md-to-meta (slurp %))
-                        (pages/all-posts))]
-    (write! pages/post-hub-html-file (pages/post-hub-page posts-meta)))
+  (write! pages/post-hub-html-file (pages/post-hub-page (pages/all-posts)))
 
   ;; Generate single post
   (doseq [post-md-file (pages/all-posts)]
