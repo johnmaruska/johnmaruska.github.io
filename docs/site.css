@@ -1,3 +1,9 @@
+/***********************************************************************
+ *
+ *                         Site Theme
+ *
+ ***********************************************************************/
+
 *  {
   margin: 0;
   padding: 0;
@@ -27,4 +33,264 @@ a {
 
 a:hover {
     color:#2aa198;
+}
+
+/****************************************
+ *
+ *         Navbar
+ *
+ ****************************************/
+
+#navbar ul {
+    float: right;
+    line-height: 1.5;
+}
+#navbar li {
+    display: inline;
+    margin-right: 1em;
+}
+
+/***********************************************************************
+ *
+ *                         Homepage
+ *
+ ***********************************************************************/
+
+body#homepage .contents {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body#homepage .contents * {
+    margin: 1em;
+}
+
+/***********************************************************************
+ *
+ *                       Blogposts Pages
+ *
+ ***********************************************************************/
+
+body#blogpost {
+
+}
+
+
+/***********************************************************************
+ *
+ *                         Posts Hub
+ *
+ ***********************************************************************/
+
+body#post-hub .post-entry {
+
+}
+
+body#post-hub .post-header {
+
+}
+
+body#post-hub .post-title {
+
+}
+
+body#post-hub .post-date {
+
+}
+
+body#post-hub .post-summary {
+
+}
+
+
+/***********************************************************************
+ *
+ *                         Links Page
+ *
+ ***********************************************************************/
+
+body#links .column {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #002B36;
+    color: #FdF6E3;
+}
+
+body#links img.avatar {
+    border-radius: 50%;
+    border: .2em solid;
+
+    margin: 1em auto;
+    display: block;
+    padding: 0;
+    width: 40%;
+}
+
+body#links p {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 1em;
+}
+
+body#links .links {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+body#links .links li {
+    margin: 1em;
+}
+body#links .links li a {
+    display: block;
+    text-align: center;
+    background-color: #FDF6E3;
+    color: #002B36;
+    margin: 1em 2em;
+    padding: 4%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+body#links .links li a i {
+    margin: 8px 8px;
+}
+
+/***********************************************************************
+ *
+ *                         Resume Page
+ *
+ ***********************************************************************/
+
+body#resume .sidebar {
+    background-color: #002B36;
+    color: #FDF6E3;
+    margin: 0;
+    padding: 0px;
+    width: 30%;
+    max-width: 400px;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    text-align: center;
+}
+
+body#resume .main {
+    margin-left: min(30%, 400px);
+    padding: 20px;
+    height: 100%;
+    max-width: 800px;
+}
+
+body#resume .sidebar-content {
+    padding: 20px;
+}
+
+body#resume .name {
+    font-size: 3rem;
+}
+
+body#resume .role,
+body#resume .location  {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+body#resume i.fa {
+    font-size: 1.5rem;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+body#resume i.fa:hover {
+    transform: scale(1.5);
+    color:#2aa198;
+}
+
+body#resume hr.divider {
+    border-top: 1px solid;
+    margin-top:20px;
+}
+
+body#resume .sidebar-content h2,
+body#resume .summary,
+body#resume .education {
+    text-align: left;
+}
+
+body#resume p.summary {
+    padding-left: 20px;
+}
+
+body#resume .updated {
+    font-size: .75rem;
+    color: #eee8d5;
+}
+body#resume p.keywords {
+    font-size: .75rem;
+    color: #657b83;
+    margin: 0 15px 5px 15px;
+}
+
+/* main content */
+
+body#resume .main ul {
+    list-style: none;
+}
+
+body#resume ul.details {
+    padding-left: 10px;
+}
+
+body#resume .experience a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+body#resume .company {
+    padding-bottom: 30px;
+}
+
+body#resume div.position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+body#resume p.interval, p.position {
+    margin: 5px;
+}
+body#resume p.position {
+    font-size: 1.25rem;
+}
+
+body#resume .details li::before {
+    content: "\00BB  ";
+}
+
+body#resume .publications li::before {
+    content: "\00BB  ";
+}
+
+/* responsive */
+
+
+@media screen and (max-width: 777px) {
+    body#resume .sidebar {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+    }
+    body#resume .main {
+        margin: 0;
+    }
+
+    body#resume div.position {
+        display: block;
+    }
+    body#resume ul.experience {
+        padding-left: 0;
+    }
 }

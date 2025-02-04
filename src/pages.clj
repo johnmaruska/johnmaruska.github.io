@@ -7,11 +7,43 @@
    [hiccup.util :refer [escape-html]]
    [markdown.core :as markdown]
    [resume]
-   [shared :refer [head navbar *relative-to-root*]]))
+   [shared :refer [head header-bar *relative-to-root*]]))
 
 (def output-root
   "Directory to dump generated HTML files, relative to project root."
   "docs")
+
+"=============================================================================
+=
+=
+=                  Home Page
+=
+=
+============================================================================="
+
+(def home-title "John Maruska - Home")
+(def home-html-file "index.html")
+(defn home-page []
+  (html5 {}
+    (head {:title home-title})
+    [:body#homepage
+     (header-bar)
+     [:div.contents
+      [:h2 "Hello!"]
+      [:p "My name is John Maruska. Professionally I'm a software
+    engineer, most of my experience has been on backend data
+    ingestion systems and my favorite language Clojure. Personally,
+    I'm interested in heavy metal, cheesy monster movies, VTubers,
+    learning bass guitar, and playing co-operative games with
+    friends."]
+      [:p "This website is in the first pass at what I'm hoping will be
+    a long-lived personal blogging endeavor. I enjoy reading and
+    learning about software development, and I'm hoping this
+    website can act as a means to push myself into doing that more
+    actively and get better retention out of my efforts."]
+      [:p "I don't have any posts yet, so this area mostly serves as a
+    placeholder until that happens. Hopefully I'll have something
+    to show you soon."]]]))
 
 "=============================================================================
 =
@@ -30,27 +62,25 @@
                 :alt (escape-html (:alt-text picture)))]))
 
 (def profile-pic
-  {:asset "assets/profile_picture_512x521.png"
+  {:asset    "assets/profile_picture_512x521.png"
    ;; TODO better alt text
    :alt-text "profile pic of John. Long hair, full beard, glasses."})
 
 (def links-title "John Maruska - Links")
 (def links-html-file "links.html")
-(def links-css-file "links.css")
 (def links-intro-paragraph "These are all the accounts I associate with my real name. I've been full hermit/lurker mode on most of these but I'm hoping to change that soonish.")
 (def links-edn-file "links.edn")
 
 (defn links-page [links-data]
   (html5 {}
-    (head {:title links-title
-           :css-file links-css-file})
-    [:body
-     (navbar)
+    (head {:title links-title})
+    [:body#links
+     (header-bar)
      [:div.column
-      [:div#links-profile
+      [:div.links-profile
        (img {:class "avatar"} profile-pic)
        [:p (escape-html links-intro-paragraph)]]
-      [:ul#links
+      [:ul.links
        (for [{:keys [network url icon]} links-data]
          [:li [:a {:href url :target "_blank"}
                [:i {:class icon}] (escape-html network)]])]]]))
@@ -64,14 +94,25 @@
 ============================================================================="
 
 (def resume-title "John Maruska - Resume")
-(def resume-css-file "resume.css")
 (def resume-html-file "resume.html")
 (defn resume-page [resume-data]
   (html5 {}
-    (head {:title resume-title :css-file resume-css-file})
-    [:body
-     (navbar)
-     (resume/contents resume-data)]))
+    (head {:title resume-title})
+    [:body#resume
+     (header-bar)
+     [:div.sidebar
+      [:div.sidebar-content
+       (resume/introduction resume-data)
+       (resume/links resume-data)
+       [:hr.divider]
+       (resume/summary resume-data)]]
+     [:div.main
+      [:div.main-content
+       (resume/experience resume-data)
+       (resume/education resume-data)
+       (resume/publications resume-data)
+       (resume/proficiencies resume-data)]]
+     (resume/updated)]))
 
 
 "=============================================================================
@@ -84,7 +125,6 @@
 
 (def post-hub-title "Articles")
 (def post-hub-html-file "posts.html")
-(def post-hub-css-file "posts.css")
 
 (defn displayed-date [date]
   date)
@@ -95,10 +135,9 @@
   Contains a list of all posts. Not yet paginated or truncated in any way."
   [posts-meta]
   (html5 {}
-    (head {:title    post-hub-title
-           :css-file post-hub-css-file})
-    [:body
-     (navbar)
+    (head {:title post-hub-title})
+    [:body#post-hub
+     (header-bar)
      [:h1 "Articles"]
      (for [meta posts-meta]
        (let [title   (-> meta :title first)
@@ -141,15 +180,13 @@
 
   Requires a string path to the markdown file to be rendered."
   [markdown-contents]
-  (let [css-file "../blogpost.css"]
-    (binding [*relative-to-root* "../"]
-      (let [parsed (markdown/md-to-html-string-with-meta
-                    markdown-contents
-                    :reference-links? true
-                    :footnotes? true)]
-        (html5 {}
-          (head {:title    (first (-> parsed :metadata :title))
-                 :css-file css-file})
-          [:body
-           (navbar)
-           (:html parsed)])))))
+  (binding [*relative-to-root* "../"]
+    (let [parsed (markdown/md-to-html-string-with-meta
+                  markdown-contents
+                  :reference-links? true
+                  :footnotes? true)]
+      (html5 {}
+        (head {:title (first (-> parsed :metadata :title))})
+        [:body.blogpost
+         (header-bar)
+         (:html parsed)]))))

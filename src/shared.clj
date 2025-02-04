@@ -18,16 +18,17 @@
    [:link {:rel "stylesheet"
            :href (str *relative-to-root* "site.css")
            :type "text/css"}]
-   [:link {:rel "stylesheet" :href css-file :type "text/css"}]
    [:title (escape-html title)]])
 
-
-(defn navbar []
-  [:nav.menu
-   [:ul.navigation
-    [:li [:a {:href "links" :title "Links"}
-          "Links"]]
-    [:li [:a {:href "resume" :title "Resume"}
-          "Resume"]]
-    [:li [:a {:href "posts" :title "posts"}
-          "Posts"]]]])
+(defn header-bar []
+  [:div#header-bar
+   [:a#site-title {:href "/"}
+    "John Maruska"]
+   [:nav#navbar
+    [:ul
+     [:li [:a {:href "links" :title "Links"}
+           "Links"]]
+     [:li [:a {:href "resume" :title "Resume"}
+           "Resume"]]
+     [:li [:a {:href "posts" :title "posts"}
+           "Posts"]]]]])

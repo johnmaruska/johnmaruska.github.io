@@ -13,6 +13,7 @@
     (spit dest contents)))
 
 (defn -main []
+  (write! pages/home-html-file (pages/home-page))
   ;; Generate resume page
   (let [resume-data (->> (edn/read-string (slurp (io/resource "links.edn")))
                          (filter :resume?)

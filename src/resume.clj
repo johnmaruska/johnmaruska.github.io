@@ -40,14 +40,6 @@
 (defn updated []
   [:div.updated [:p (str "updated:" (today))]])
 
-(defn sidebar [{:keys [basics] :as resume-data}]
-  [:div.sidebar
-   [:div.sidebar-content
-    (introduction resume-data)
-    (links resume-data)
-    [:hr.divider]
-    (summary resume-data)]])
-
 ;; dates in EDN are given in [yyyy "Month" dd] format
 (defn date [[year month day]]
   (str month " " year))
@@ -86,14 +78,3 @@
       [:li
        [:b category ": "]
        (escape-html (string/join ", " values))])]])
-
-(defn contents [resume-data]
-  [:<>
-   (sidebar resume-data)
-   [:div.main
-    [:div.main-content
-     (experience resume-data)
-     (education resume-data)
-     (publications resume-data)
-     (proficiencies resume-data)]]
-   (updated)])
