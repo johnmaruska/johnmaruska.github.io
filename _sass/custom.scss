@@ -1,0 +1,163 @@
+/**
+ * TODO:
+ * - Override theme values with my own
+ * -
+ **/
+
+:root {
+    /********
+     * Font Sizes: Major Second scale factor 1.125
+     *
+     * Credit "Size me up" by Saron Yitbarek aka Not A Designer
+     * https://notadesigner.io/p/typographic-scales
+     ********/
+    --display-1-font-size: 3.247rem;
+    --display-2-font-size: 2.887rem;
+    --heading-1-font-size: 2.566rem;
+    --heading-2-font-size: 2.281rem;
+    --heading-3-font-size: 2.027rem;
+    --heading-4-font-size: 1.802rem;
+    --heading-5-font-size: 1.602rem;
+    --heading-6-font-size: 1.424rem;
+    --body-text-1-font-size: 1.265rem;
+    --body-text-2-font-size: 1.125rem;
+    --body-text-3-font-size: 1rem;
+    --label-1-font-size: 0.889rem;
+    --label-2-font-size: 0.79rem;
+    --label-3-font-size: 0.702rem;
+
+    /********
+     * Color Theme: Solarized by Ethan Schoonover
+     *
+     * Credit "Solarized" by Ethan Schoonover
+     * https://ethanschoonover.com/solarized/
+     ********/
+    --base-dark-3-color: #002b36;
+    --base-dark-2-color: #073642;
+    --base-dark-1-color: #586e75;
+    --base-dark-0-color: #657b83;
+    --base-light-0-color: #839496;
+    --base-light-1-color: #93a1a1;
+    --base-light-2-color: #eee8d5;
+    --base-light-3-color: #fdf6e3;
+    --yellow-color: #b58900;
+    --orange-color: #cb4b16;
+    --red-color: #dc322f;
+    --magenta-color: #d33682;
+    --violet-color: #6c71c4;
+    --blue-color: #268bd2;
+    --cyan-color: #2aa198;
+    --green-color: #859900;
+}
+
+/********
+ **** Margin and Spacing rules
+ *
+ * Use increments of 0.5rem (8px made relative) for aligning elements.
+ * 0.5rem , 1rem, 2rem, ..., 8rem, ... 67.5rem ... 135rem
+ *
+ * Credit "Let's get griddy" by Saron Yitbarek aka Not A Designer
+ * https://notadesigner.io/p/8px-grid
+ ********/
+
+/***********************************************************************
+  *
+  *                         Resume Page
+  *
+  ***********************************************************************/
+
+/**
+ * TODO:
+ * - Fold duration onto same line as company
+ * - New font family, at least for Company name. Looks eh.
+ * - Intro section needs better layout in general.
+ * - Remove "Professional Profile" header? Right into intro?
+ * - Add link to PDF version that I submit to websites.
+ * - Reduce to 2pg? Rename to CV?
+ * - Cleaner display for University name
+ **/
+
+.resume .section {
+    h1 {
+        font-size: var(--display-1-font-size);
+    }
+    h2 {
+        font-size: var(--heading-1-font-size);
+    }
+}
+
+.resume .introduction {
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: 1fr 1fr;
+    .name {
+        font-size: var(--heading-1-font-size);
+    }
+    .role {
+        text-align: right;
+        font-size: var(--heading-1-font-size);
+    }
+    .location {
+        text-align: left;
+        grid-column: 1;
+        font-size: var(--heading-6-font-size);
+    }
+}
+
+.resume .experience {
+    ul.experience,
+    li.company {
+        margin: 1rem 0;
+        list-style: none;
+    }
+
+    .company {
+        .row {
+            display: grid;
+            grid-template-rows: 2;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        .name {
+            font-weight: bold;
+            font-size: var(--heading-4-font-size);
+            grid-column: 1 / 8;
+            grid-row: 1;
+        }
+        .role {
+            font-size: var(--heading-5-font-size);
+            grid-row: 2;
+            grid-column: 1 / 12;
+        }
+        .interval {
+            font-size: var(--heading-5-font-size);
+            grid-column: 9 / 12;
+            grid-row: 1;
+            text-align: right;
+        }
+
+        .keywords {
+            margin-bottom: 0;
+            font-size: var(--label-1-font-size);
+            color: var(--base-dark-1-color);
+        }
+        ul.details {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.resume .summary {
+    p {
+        margin: 1rem;
+    }
+}
+
+.resume .education {
+    font-size: var(--heading-5-font-size);
+    .institution {
+        font-size: var(--heading-5-font-size);
+    }
+    .degree {
+        font-size: var(--body-text-1-font-size);
+    }
+}
