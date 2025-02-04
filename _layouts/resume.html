@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+{% assign resume = site.data.resume %}
+<div class="resume">
+    <div class="introduction section">
+        <div class="name">{{ resume.name | escape }}</div>
+        <div class="role">{{ resume.role | escape }}</div>
+        <div class="location">{{ resume.location | escape }}</div>
+    </div>
+    <div class="summary section">
+        <!-- <h2>Professional Profile</h2> -->
+        <p class="summary">{{ resume.summary | escape }}</p>
+    </div>
+    <div class="experience section">
+        <ul class="experience">
+            {%- for job in resume.jobHistory -%}
+            <li class="company">
+                <div class="row">
+                    <a class="name" href="{{ job.website }}">
+                        {{ job.company | escape }}
+                    </a>
+                    <div class="interval">
+                        {{ job.start[0] }} to {{ job.end[0] }}
+                    </div>
+                    <div class="role">{{ job.roles | join: "<br />" }}</div>
+                </div>
+                <p class="keywords label1">
+                    {{ job.keywords | join: ", " | escape}}
+                </p>
+                <ul class="details">
+                    {%- for bullet in job.bullets -%}
+                    <li>{{ bullet | escape }}</li>
+                    {%- endfor -%}
+                </ul>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+    <div class="education section">
+        <h2>Education</h2>
+        <ul class="education">
+            <a
+                class="institution"
+                href="{{ site.data.resume.education.website }}"
+            >
+                {{ resume.education.institution | escape }}</a
+            >, {{ resume.education.graduation[0] }}
+            <ul>
+                {%- for degree in resume.education.degrees -%}
+                <li class="degree">
+                    {{ degree.type }} in {{ degree.department}}
+                </li>
+                {%- endfor -%}
+            </ul>
+        </ul>
+    </div>
+
+    <div class="publications section">
+        <h2>Publications</h2>
+        <ul class="publications">
+            {%- for entry in resume.publications -%}
+            <li>
+                <a href="{{ entry.link }}" target="_blank">
+                    {{ entry.authors | join: ", " }} {{ entry.title }}. {{
+                    entry.publication }}
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+    <div class="proficiencies section">
+        <h2>Proficiencies</h2>
+        <ul class="proficiencies">
+            {%- for group in resume.proficiencies -%}
+            <li><b>{{ group.category }}</b>: {{ group.terms | join: ", " }}</li>
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>

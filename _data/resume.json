@@ -1,0 +1,270 @@
+{
+  "name": "John Maruska",
+  "role": "Software Engineer",
+  "location": "St. Louis, MO | Remote",
+  "summary": "I’m a software engineer with 6.5 years experience working primarily on backend systems and data pipelines. The projects I’ve owned have been core to each company: at Spry Digital, on a project which generated $2-3M/mo in sales for the client; and at Incremental, a retail analytics startup, the data ingestion system for all data the company leveraged. In addition to my technical contributions, I’ve fostered a culture of collaboration, and mutual learning by facilitating department meetings, founding a company developer study group, and stewarding a department knowledge-sharing wiki.",
+  "jobHistory": [
+    {
+      "company": "Spry Digital",
+      "website": "https://sprydigital.com/",
+      "location": "Remote (Saint Louis, MO)",
+      "roles": ["Senior Full-Stack Software Engineer"],
+      "start": [2023, "Dec", 4],
+      "end": ["Present", "", ""],
+      "keywords": [
+        "NodeJS",
+        "ReactJS",
+        "TypeScript",
+        "AWS",
+        "EC2",
+        "GitLab CI",
+        "Emacs",
+        "Bash"
+      ],
+      "bullets": [
+        "Maintaining and improving buyflows generating up to $3M/mo with 40K sales/mo for a leading telecom company, supporting a $1.6M/yr contract.",
+        "Fostering a highly communicative team culture by introducing pair programming, leading a developer study group, and stewarding technical documentation.",
+        "Increased quality of technology department meetings by 12.5% to a 9 out of 10 rating by introducing structured agendas and discussing meaningful topics.",
+        "Evangelizing a business management framework to align company processes and improve the efficiency of the technology department, by coordinating process changes and educating peers on the system.",
+        "Modernizing systems and improved reliability by introducing and driving the adoption of TypeScript, unit testing, and CI/CD.",
+        "Automated manual code releases by creating a robust CI/CD pipeline, drastically reducing deployment time and reducing the risk of human error.",
+        "Consistently delivering releases above expectations and ahead of schedule by improving clarity in the systems code and streamlining processes around meetings, code reviews, and deployment."
+      ]
+    },
+    {
+      "company": "Incremental",
+      "website": "https://incremental.com/",
+      "location": "Remote (Baltimore, MD)",
+      "roles": ["Senior Software Engineer"],
+      "start": [2022, "Apr", 25],
+      "end": [2023, "Apr", 20],
+      "keywords": [
+        "Clojure",
+        "AWS",
+        "EC2",
+        "Redshift",
+        "Athena",
+        "S3",
+        "Step Functions",
+        "Serverless",
+        "Terraform",
+        "Kubernetes",
+        "PostgreSQL",
+        "Emacs",
+        "Elisp",
+        "Bash",
+        "JavaScript",
+        "Python",
+        "GitHub Actions"
+      ],
+      "bullets": [
+        "Drove development of data ingestion systems for a retail media analytics early-stage startup, connecting retail purchase data with advertising campaign data to maximize the value of ad spend.",
+        "Trained and mentored developers from an object-oriented background on Clojure, immutability and the functional programming paradigm.",
+        "Migrated ingestion to a simplified ETL pipeline which reduced new data ingestion time, expanded system visibility, and enabled more efficient response to data inquiries.",
+        "Demonstrated a strong ability to independently drive change, including integrating several new data sources into the ETL pipeline while requiring zero support from downstream teams.",
+        "Owned unification of transform projects using Polylith to drastically reduce code duplication and enable re-use, increasing development speed of adding new data sources significantly."
+      ]
+    },
+    {
+      "company": "Washington University School of Medicine",
+      "website": "https://medicine.washu.edu/",
+      "location": "Remote (Saint Louis, MO)",
+      "roles": ["Applications Developer, Division of Oncology"],
+      "start": [2021, "Feb", 15],
+      "end": [2022, "Apr", 15],
+      "keywords": [
+        "GCP",
+        "Python",
+        "Bash",
+        "Scala",
+        "Perl",
+        "Cromwell",
+        "CWL",
+        "WDL",
+        "LSF",
+        "Terra.bio"
+      ],
+      "bullets": [
+        "Drove migration data pipeline for on-demand reproducible runs of precision oncology workflows to GCP.",
+        "Integrated cloud solution with the local-cluster provenance database.",
+        "Modernized workflow definitions to industry standards to enable the use of cloud workflow orchestration.",
+        "Documented user guides and system behaviors, successfully providing support to researchers adopting the cloud-migrated system."
+      ]
+    },
+    {
+      "company": "Guaranteed Rate",
+      "website": "https://www.rate.com/",
+      "location": "Remote (Chicago, IL)",
+      "roles": ["Software Engineer, Borrower Data"],
+      "start": [2019, "Jul", 29],
+      "end": [2021, "Jan", 29],
+      "keywords": [
+        "Clojure",
+        "ClojureScript",
+        "Reagent",
+        "Re-Frame",
+        "NodeJS",
+        "ReactJS",
+        "Python",
+        "AWS",
+        "Serverless",
+        "Terraform",
+        "Kubernetes",
+        "Step Functions",
+        "PostgreSQL",
+        "SQS",
+        "Emacs",
+        "Elisp",
+        "GitHub Actions"
+      ],
+      "bullets": [
+        "Aligned objectives and bridged communications with designers, frontend engineers, and dependency teams to develop and launch a user-friendly website to support new borrowers.",
+        "Owned successful completion of various legacy and incomplete projects to drive value for the business, namely the core TransferSafe service previously owned by a team split in a reorganization, and a few legacy .NET services that needed continued maintenance.",
+        "Fostered collaborative working relationships with colleagues remotely, effectively navigating team growth from five partially remote backend engineers to 12 fully remote interdisciplinary staff.",
+        "Learned and utilized new skills in an efficient manner based on business and project needs, including independently learning Terraform and Re-Frame/Reagent libraries; trained staff to develop skill-sets.",
+        "Strategized and led the complete migration of 12+ services from disparate, Serverless stacks to a standardized Terraform-managed multi-tenant infrastructure."
+      ]
+    },
+    {
+      "company": "The Climate Corporation",
+      "website": "https://climate.com/en-us.html",
+      "location": "St. Louis, MO",
+      "roles": [
+        "Software Engineer II, Geospatial Engineering; 2018-2019",
+        "Software Engineer I, Geospatial Engineering; 2018",
+        "Software Engineer Intern, Geospatial Engineering, 2017"
+      ],
+      "start": [2017, "May", ""],
+      "end": [2019, "Jul", ""],
+      "keywords": [
+        "AWS",
+        "Clojure",
+        "ReactJS",
+        "Ruby",
+        "Scala",
+        "S3",
+        "DynamoDB",
+        "SQS",
+        "Landsat",
+        "ArcGIS",
+        "PostgreSQL",
+        "Jenkins",
+        "Emacs",
+        "JavaScript",
+        "Google Maps API",
+        "Nano",
+        "Bash",
+        "Python"
+      ],
+      "bullets": [
+        "Improved the efficiency and quality of map images by transitioning the legacy batch-driven, service-oriented microservices system to an event-oriented microservices architecture.",
+        "Decreased development time related to business logic changes and optimized system visibility by transitioning logic filtering and status tracking processes for ingested geospatial datasets from the legacy pipeline to a separate service.",
+        "Achieved Engineering Department Award for geospatial ingestion pipeline redesign.",
+        "Streamlined troubleshooting and escalated issue resolution processes by visualizing individual geospatial dataset boundaries via a React.js frontend; completed an expanded version of the project later on.",
+        "Drove adoption of the visualization tool by training the support team, resulting in a reduced number of escalated tickets, and decreased engineering time spent on support.",
+        "Mentored and supported interns on Python, Bash, and geospatial team services-related issues."
+      ]
+    }
+  ],
+  "education": {
+    "institution": "Missouri University of Science & Technology",
+    "graduation": [2017, "Dec"],
+    "degrees": [
+      {
+        "type": "B.S.",
+        "department": "Computer Science"
+      },
+      { "type": "B.S", "department": "Computer Engineering" },
+      { "type": "Minor", "department": "Mathematics" }
+    ]
+  },
+  "publications": [
+    {
+      "authors": ["Maruska, J.", "Schad, J.", "Kosbar, K."],
+      "title": "Mars-Colonization Sensor System for Soil Analysis",
+      "publication": "International Telemetering Conference Proceedings, Volume 52 (2016)",
+      "link": "https://repository.arizona.edu/handle/10150/666409"
+    }
+  ],
+  "proficiencies": [
+    {
+      "category": "DevOps",
+      "terms": [
+        "AWS",
+        "GCP",
+        "Jenkins",
+        "Terraform",
+        "Serverless",
+        "Docker",
+        "Kubernetes",
+        "GitLab CI",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "category": "Databases",
+      "terms": [
+        "PostgreSQL",
+        "DynamoDB",
+        "MongoDB",
+        "Athena",
+        "Redshift",
+        "neo4j"
+      ]
+    },
+    {
+      "category": "Dev Tools",
+      "terms": ["Emacs", "Emacs Lisp", "Git", "Bash", "Nix"]
+    },
+    {
+      "category": "Backend",
+      "terms": [
+        "NodeJS",
+        "Ruby on Rails",
+        "REST",
+        "ETL",
+        "Microservices",
+        "Monolith",
+        "S3",
+        "Step Functions",
+        "SQS",
+        "SNS"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "terms": [
+        "ReactJS",
+        "Reagent",
+        "Re-frame",
+        "TailwindCSS",
+        "AngularJS",
+        "HTML5",
+        "CSS3"
+      ]
+    },
+    {
+      "category": "Languages",
+      "terms": [
+        "Clojure",
+        "ClojureScript",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "SQL"
+      ]
+    }
+  ],
+  "awards": [
+    "Engineering Department Award, The Climate Corporation, 2017: Recognized for redesigning the geospatial ingestion pipeline.",
+    "First Place Overall, Mars Society’s University Rover Challenge, 2017",
+    "First Place – Phobos Division, Mars Society’s University Rover Challenge, 2016",
+    "First Place Undergraduate Paper, International Telemetering Conference, 2016",
+    "John Berenka Science Award, Mars Society’s University Rover Challenge, 2016"
+  ],
+  "community": [
+    "Co-Organizer & Host, STL Clojure Meetup, 2018",
+    "Co-Organizer & Host, Arch Lisp Meetup, 2018",
+    "Emphasis Area Workshop Chair, IEEE Missouri S&T Chapter, 2016 to 2017"
+  ]
+}

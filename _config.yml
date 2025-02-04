@@ -1,0 +1,16 @@
+title: John Maruska
+description: >-
+  Placeholder description, do not steal.
+domain: johnmaruska.github.io
+url: https://johnmaruska.github.io
+baseurl: /johnmaruska.github.io/ # place folder name if the site is served in a subfolder
+
+email: jackmaruska@gmail.com
+github_username: johnmaruska
+bluesky_username: johnmaruska
+bluesky_domain: bsky.social
+linkedin_username: johnwmaruska
+
+theme: minima
+plugins:
+  - jekyll-feed
