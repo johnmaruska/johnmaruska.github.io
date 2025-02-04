@@ -1,16 +1,7 @@
 (ns resume
   (:require
-   [clojure.edn :as edn]
-   [clojure.java.io :as io]
    [clojure.string :as string]
-   [hiccup.page :refer [html5]]
    [hiccup.util :refer [escape-html]]))
-
-(defn introduction [{:keys [basics]}]
-  [:div.introduction
-   [:h1.name (escape-html (:name basics))]
-   [:p.role (escape-html (:label basics))]
-   [:p.location (escape-html (:location basics))]])
 
 (defn links [{:keys [basics]}]
   [:div.links
@@ -18,8 +9,15 @@
      [:a {:href url}
       [:i {:class icon}]])])
 
+(defn introduction [{:keys [basics]}]
+  [:div.introduction.section
+   [:h1.name (escape-html (:name basics))]
+   [:div.role (escape-html (:label basics))]
+   [:div.location (escape-html (:location basics))]
+   (links {:basics basics})])
+
 (defn summary [{:keys [basics]}]
-  [:div.summary
+  [:div.summary.section
    [:h2 "Professional Profile"]
    [:p.summary (escape-html (:content (:summary basics)))]])
 
@@ -56,10 +54,10 @@
     (for [entry professional-experience]
       [:li.company
        [:div
-        [:a.name.h4 {:href (:website entry)}
+        [:a.name {:href (:website entry)}
          (escape-html (:company entry))]
-        [:h4.interval (escape-html (interval entry))]
-        [:h4.position (escape-html (:position entry))]]
+        [:div.interval (escape-html (interval entry))]
+        [:div.position (escape-html (:position entry))]]
        [:p.keywords.label1 (escape-html (->> (:keywords entry)
                                              (map name)
                                              (string/join ", ")))]

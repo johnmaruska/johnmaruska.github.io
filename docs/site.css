@@ -4,66 +4,58 @@
  *
  ***********************************************************************/
 
-/********
- **** Font Sizes: Major Second scale factor 1.125
- *
- * Display 1 - 51.96px
- * Display 2 - 46.18px
- * Heading 1 - 41.05px
- * Heading 2 - 36.49px
- * Heading 3 - 32.44px
- * Heading 4 - 23.83px
- * Heading 5 - 25.63px
- * Heading 6 - 22.78px
- * Body text 1 - 20.25px
- * Body text 2 - 18px
- * Body text 3 - 16px (base font size)
- * Label 1 - 14.22px
- * Label 2 - 12.62px
- * Label 3 - 11.24px
- *
- * Credit "Size me up" by Saron Yitbarek aka Not A Designer
- * https://notadesigner.io/p/typographic-scales
- ********/
+:root {
 
-* {
-    font-size: 16px;
-}
-/* class version is to use the size for different tags, e.g. `a` */
-h1, .h1 {
-    font-size: 41.05px;
-}
-h2, .h2 {
-    font-size: 36.49px;
-}
-h3, .h3 {
-    font-size: 32.44px;
-}
-h4, .h4 {
-    font-size: 23.83px;
-}
-h5, .h5 {
-    font-size: 25.63px;
-}
-h6, .h6 {
-    font-size: 22.78px;
-}
+    /********
+     * Font Sizes: Major Second scale factor 1.125
+     *
+     * Credit "Size me up" by Saron Yitbarek aka Not A Designer
+     * https://notadesigner.io/p/typographic-scales
+     ********/
+    --display-1-font-size: 3.247rem;
+    --display-2-font-size: 2.887rem;
+    --heading-1-font-size: 2.566rem;
+    --heading-2-font-size: 2.281rem;
+    --heading-3-font-size: 2.027rem;
+    --heading-4-font-size: 1.802rem;
+    --heading-5-font-size: 1.602rem;
+    --heading-6-font-size: 1.424rem;;
+    --body-text-1-font-size: 1.265rem;
+    --body-text-2-font-size: 1.125rem;
+    --body-text-3-font-size: 1rem;
+    --label-1-font-size: 0.889rem;
+    --label-2-font-size: 0.790rem;
+    --label-3-font-size: 0.702rem;
 
-.label1 {
-    font-size: 14.22px;
-}
-.label2 {
-    font-size: 12.62px;
-}
-.label3 {
-    font-size: 11.24px;
+    /********
+     * Color Theme: Solarized by Ethan Schoonover
+     *
+     * Credit "Solarized" by Ethan Schoonover
+     * https://ethanschoonover.com/solarized/
+     ********/
+    --base-dark-3-color:  #002b36;
+    --base-dark-2-color:  #073642;
+    --base-dark-1-color:  #586e75;
+    --base-dark-0-color:  #657b83;
+    --base-light-0-color: #839496;
+    --base-light-1-color: #93a1a1;
+    --base-light-2-color: #eee8d5;
+    --base-light-3-color: #fdf6e3;
+    --yellow-color:       #b58900;
+    --orange-color:       #cb4b16;
+    --red-color:          #dc322f;
+    --magenta-color:      #d33682;
+    --violet-color:       #6c71c4;
+    --blue-color:         #268bd2;
+    --cyan-color:         #2aa198;
+    --green-color:        #859900;
 }
 
 /********
  **** Margin and Spacing rules
  *
- * Use increments of 8px for aligning elements.
- * 8px , 16px, 24px, ..., 64px, ... 1080px ... 2160px
+ * Use increments of 0.5rem (8px made relative) for aligning elements.
+ * 0.5rem , 1rem, 2rem, ..., 8rem, ... 67.5rem ... 135rem
  *
  * Credit "Let's get griddy" by Saron Yitbarek aka Not A Designer
  * https://notadesigner.io/p/8px-grid
@@ -73,22 +65,23 @@ h6, .h6 {
  *
  *                         Site Theme
  *
- ***********************************************************************/
+ **********************************************************************/
 
-*  {
-    margin: 8px;
+* {
+    margin: 0.5rem 0.5rem 0.5rem 0;
     padding: 0;
     box-sizing: border-box;
 }
 a {
-    margin: 0px;
+    margin: 0;
 }
 
 body {
-    background-color: #FDF6E3;
-    color: #002B36;
+    background-color: var(--base-light-3-color);
+    color: var(--base-dark-3-color);
     font-family: Muli, sans-serif;
     word-wrap: break-word;
+    padding: 2rem;
 }
 
 /*
@@ -103,12 +96,13 @@ a {
 }
 
 a:hover {
-    color:#2aa198;
+    color: var(--cyan-color);
 }
 
 li {
-    margin-left: 16px
+    margin-left: 1.5rem;
 }
+
 /****************************************
  *
  *         Navbar
@@ -131,12 +125,11 @@ li {
  ***********************************************************************/
 
 body#homepage .contents {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 50rem;
+    margin: 0 auto;  /* center elements */
 }
 
 body#homepage .contents * {
-    margin: 1em;
 }
 
 /***********************************************************************
@@ -146,9 +139,7 @@ body#homepage .contents * {
  ***********************************************************************/
 
 body#blogpost {
-
 }
-
 
 /***********************************************************************
  *
@@ -157,25 +148,19 @@ body#blogpost {
  ***********************************************************************/
 
 body#post-hub .post-entry {
-
 }
 
 body#post-hub .post-header {
-
 }
 
 body#post-hub .post-title {
-
 }
 
 body#post-hub .post-date {
-
 }
 
 body#post-hub .post-summary {
-
 }
-
 
 /***********************************************************************
  *
@@ -184,17 +169,17 @@ body#post-hub .post-summary {
  ***********************************************************************/
 
 body#links .column {
-    max-width: 600px;
+    max-width: 37.5rem;
     margin: 0 auto;
     padding-top: 1em;
     padding-bottom: 1em;
-    background-color: #002B36;
-    color: #FdF6E3;
+    background-color: var(--base-dark-3-color);
+    color: var(--base-light-3-color);
 }
 
 body#links img.avatar {
     border-radius: 50%;
-    border: .2em solid;
+    border: 0.2em solid;
 
     margin: 1em auto;
     display: block;
@@ -204,7 +189,6 @@ body#links img.avatar {
 
 body#links p {
     text-align: center;
-    /* font-size: 1.1em; */
     margin: 1em;
 }
 
@@ -219,15 +203,14 @@ body#links .links li {
 body#links .links li a {
     display: block;
     text-align: center;
-    background-color: #FDF6E3;
-    color: #002B36;
+    background-color: var(--base-light-3-color);
+    color: var(--base-dark-3-color);
     margin: 1em 2em;
     padding: 4%;
     font-weight: bold;
-    /* font-size: 1.2em; */
 }
 body#links .links li a i {
-    margin: 8px 8px;
+    margin: 0.5rem 0.5rem;
 }
 
 /***********************************************************************
@@ -240,159 +223,43 @@ body#resume {
     max-width: 70rem;
 }
 
+body#resume .section h1 {
+    font-size: var(--display-1-font-size);
+}
+body#resume .section h2 {
+    font-size: var(--heading-1-font-size);
+}
+body#resume .experience .company .name {
+    font-size: var(--heading-4-font-size);
+}
+body#resume .experience .company .interval {
+    font-size: var(--heading-5-font-size);
+}
+body#resume .experience .company .position {
+    font-size: var(--heading-3-font-size);
+}
+body#resume .experience .keywords {
+    font-size: var(--label-1-font-size);
+    color: var(--base-dark-1-color);
+}
+
 body#resume .links i.fa {
     font-size: 2rem;
     padding: 1rem;
     transition: 0.3s
 }
 
+body#resume .experience li.company {
+    margin-left: 0;
+}
+body#resume .experience .name {
+    font-weight: bold;
+}
+
 body#resume .experience .position {
     font-weight: bold;
 }
 
-body#resume .experience li.company {
-    margin: 24px;
-}
-
 body#resume ul.experience {
     list-style: none;
-}
-
-body#resume .section {
-    margin: 24px;
-}
-
-/*
-body#resume .sidebar {
-    background-color: #002B36;
-    color: #FDF6E3;
-    margin: 0;
-    padding: 0px;
-    width: 30%;
-    max-width: 400px;
-    height: 100%;
-    position: fixed;
-    overflow: auto;
-    text-align: center;
-}
-
-body#resume .main {
-    margin-left: min(30%, 400px);
-    padding: 20px;
-    height: 100%;
-    max-width: 800px;
-}
-
-body#resume .sidebar-content {
-    padding: 20px;
-}
-
-body#resume .name {
-    font-size: 3rem;
-}
-
-body#resume .role,
-body#resume .location  {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-body#resume i.fa {
-    font-size: 1.5rem;
-    padding: 10px;
-    transition: 0.3s;
-}
-
-body#resume i.fa:hover {
-    transform: scale(1.5);
-    color:#2aa198;
-}
-
-body#resume hr.divider {
-    border-top: 1px solid;
-    margin-top:20px;
-}
-
-body#resume .sidebar-content h2,
-body#resume .summary,
-body#resume .education {
-    text-align: left;
-}
-
-body#resume p.summary {
-    padding-left: 20px;
-}
-
-body#resume .updated {
-    font-size: .75rem;
-    color: #eee8d5;
-}
-body#resume p.keywords {
-    font-size: .75rem;
-    color: #657b83;
-    margin: 0 15px 5px 15px;
-}
-
-
-body#resume .main ul {
-    list-style: none;
-}
-
-body#resume ul.details {
-    padding-left: 10px;
-}
-
-body#resume .experience a {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-body#resume .company {
-    padding-bottom: 30px;
-}
-
-body#resume div.position {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-body#resume p.interval, p.position {
-    margin: 5px;
-}
-body#resume p.position {
-    font-size: 1.25rem;
-}
-
-body#resume .details li::before {
-    content: "\00BB  ";
-}
-
-body#resume .publications li::before {
-    content: "\00BB  ";
-}
-
-*/
-
-/* responsive */
-
-
-@media screen and (max-width: 777px) {
-    body#resume .sidebar {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        position: relative;
-    }
-    body#resume .main {
-        margin: 0;
-    }
-
-    body#resume div.position {
-        display: block;
-    }
-    body#resume ul.experience {
-        padding-left: 0;
-    }
 }
