@@ -24,7 +24,18 @@ layout: default
                     <div class="interval">
                         {{ job.start[0] }} to {{ job.end[0] }}
                     </div>
-                    <div class="role">{{ job.roles | join: "<br />" }}</div>
+                    {%- for role in job.roles -%}
+                    <div class="role">
+                        <div class="title">
+                            {{ role.title | escape }} <br />
+                        </div>
+                        {%- if role.start -%}
+                        <div class="interval">
+                            {{ role.start[0] }} to {{ role.end[0] }}
+                        </div>
+                        {%- endif -%}
+                    </div>
+                    {%- endfor -%}
                 </div>
                 <p class="keywords label1">
                     {{ job.keywords | join: ", " | escape}}

@@ -8,7 +8,7 @@
       "company": "Spry Digital",
       "website": "https://sprydigital.com/",
       "location": "Remote (Saint Louis, MO)",
-      "roles": ["Senior Full-Stack Software Engineer"],
+      "roles": [{ "title": "Senior Full-Stack Software Engineer" }],
       "start": [2023, "Dec", 4],
       "end": ["Present", "", ""],
       "keywords": [
@@ -35,7 +35,7 @@
       "company": "Incremental",
       "website": "https://incremental.com/",
       "location": "Remote (Baltimore, MD)",
-      "roles": ["Senior Software Engineer"],
+      "roles": [{ "title": "Senior Software Engineer" }],
       "start": [2022, "Apr", 25],
       "end": [2023, "Apr", 20],
       "keywords": [
@@ -69,7 +69,7 @@
       "company": "Washington University School of Medicine",
       "website": "https://medicine.washu.edu/",
       "location": "Remote (Saint Louis, MO)",
-      "roles": ["Applications Developer, Division of Oncology"],
+      "roles": [{ "title": "Applications Developer, Division of Oncology" }],
       "start": [2021, "Feb", 15],
       "end": [2022, "Apr", 15],
       "keywords": [
@@ -95,7 +95,7 @@
       "company": "Guaranteed Rate",
       "website": "https://www.rate.com/",
       "location": "Remote (Chicago, IL)",
-      "roles": ["Software Engineer, Borrower Data"],
+      "roles": [{ "title": "Software Engineer, Borrower Data" }],
       "start": [2019, "Jul", 29],
       "end": [2021, "Jan", 29],
       "keywords": [
@@ -130,9 +130,21 @@
       "website": "https://climate.com/en-us.html",
       "location": "St. Louis, MO",
       "roles": [
-        "Software Engineer II, Geospatial Engineering; 2018-2019",
-        "Software Engineer I, Geospatial Engineering; 2018",
-        "Software Engineer Intern, Geospatial Engineering, 2017"
+        {
+          "title": "Software Engineer II, Geospatial Engineering",
+          "start": [2018, "", ""],
+          "end": [2019, "", ""]
+        },
+        {
+          "title": "Software Engineer I, Geospatial Engineering",
+          "start": [2018, "", ""],
+          "end": [2018, "", ""]
+        },
+        {
+          "title": "Software Engineer Intern, Geospatial Engineering",
+          "start": [2017, "", ""],
+          "end": [2018, "", ""]
+        }
       ],
       "start": [2017, "May", ""],
       "end": [2019, "Jul", ""],
