@@ -23,3 +23,11 @@ actively and get better retention out of my efforts.
 I don't have any posts yet, so this area mostly serves as a
 placeholder until that happens. Hopefully I'll have something
 to show you soon.
+
+Things that aren't done yet that I'd like to
+- Styling Resume page for mobile
+- Add a "download PDF" button to Resume page which gives the word-document-created PDF that I actually send out.
+- Styling site-wide to use Solarized coloring and a new font
+- Write a blogpost about my knowledge management system, synthesis of PARA and GTD and Zettelkasten.
+- Write a blogpost about how I use git and what it gives me
+- Write a blogpost with my dev resource library. Recommendations on books, favorite blogposts, topics to rabbit hole into, etc
